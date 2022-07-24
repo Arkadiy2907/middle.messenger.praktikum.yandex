@@ -583,7 +583,7 @@ var $52798990c1365e21$export$2e2bcd8739ae039 = $52798990c1365e21$var$templateFun
 
 
 var $f45a8e53f01144c6$exports = {};
-$f45a8e53f01144c6$exports = new URL("78.77024c9c.png", "file:" + __filename).toString();
+$f45a8e53f01144c6$exports = new URL("78.884df5d6.png", "file:" + __filename).toString();
 
 
 const $76cfec9958bfa4af$var$props = {
@@ -1044,7 +1044,7 @@ var $041259f80c6bdf72$export$2e2bcd8739ae039 = (src, displayName)=>(0, $939f2f04
 
 
 var $b689ea58369a6a78$exports = {};
-$b689ea58369a6a78$exports = new URL("cat.8140d62d.png", "file:" + __filename).toString();
+$b689ea58369a6a78$exports = new URL("cat.5ff3e4b7.png", "file:" + __filename).toString();
 
 
 const $1277baca73f8202c$var$props = {
