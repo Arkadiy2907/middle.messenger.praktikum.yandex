@@ -1,0 +1,63 @@
+.wrapper__index {
+	@include wrapper(center, center);
+
+	.enterChat {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		background-color: $colorWhite;
+		width: 340px;
+		height: 450px;
+		overflow: hidden;
+		padding: 30px;
+		border: none;
+		border-radius: 6px;
+
+		.enterChat__form {
+			margin-bottom: 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 90%;
+			width: 100%;
+
+			h3 {
+				font-size: 20px;
+				margin-bottom: 35px;
+				color: $colorBlack;
+				text-align: center;
+			}
+
+			.form-control {
+				display: flex;
+				flex-direction: column;
+				margin-bottom: 5px;
+
+				label {
+					color: $colorGrey;
+					font-size: 9px;
+					margin-bottom: 8px;
+				}
+
+				input {
+					border-bottom: 1px solid $colorBlue;
+					color: $colorBlack;
+
+					&::placeholder {
+						color: $colorBlack;
+						font-size: 13px;
+					}
+				}
+
+				small {
+					visibility: hidden;
+				}
+			}
+
+			.last {
+				margin-bottom: 159px;
+			}
+		}
+	}
+}
