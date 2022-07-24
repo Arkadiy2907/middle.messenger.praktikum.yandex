@@ -1,6 +1,6 @@
-@import "./nullStyle";
+@import "./_nullStyle.scss";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Puppies+Play&display=swap');
-@import "option";
+@import "./option.scss";
 @import "../components/avatar/avatar";
 @import "../components/button/btnBlue";
 @import "../components/button/btnText";
