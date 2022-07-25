@@ -1,0 +1,151 @@
+.wrapper__choseChat {
+	@include wrapper(flex-start, flex-start);
+	max-width: 100vw;
+	width: 100%;
+
+	.allChats {
+		display: flex;
+		flex-direction: column;
+		max-height: 100vh;
+		height: 100vh;
+		width: 18.6%;
+		overflow: hidden;
+		padding: 21px 10px 0 10px;
+		background-color: $colorBgChat;
+
+		.profile {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 23px;
+
+			a {
+				color: $colorGrey;
+				font-size: 12px;
+				transition: all 0.3s linear;
+
+				&:hover {
+					color: $colorBlack;
+				}
+			}
+		}
+
+		.searchChat {
+			margin-bottom: 14px;
+
+			.search {
+				background-color: $colorBg;
+				width: 100%;
+				height: 32px;
+				border-radius: 5px;
+				padding: 0 5px;
+
+				&::placeholder {
+					color: $colorGrey;
+					font-size: 12px;
+					text-align: center;
+					text-transform: capitalize;
+				}
+			}
+		}
+
+		.chatsNow {
+			display: flex;
+			flex-direction: column;
+			overflow-y: auto;
+
+			.chat {
+				display: flex;
+				border-top: 1px solid $colorLine;
+				height: 71px;
+				padding: 12px 0;
+				transition: all 0.3s linear;
+
+				&:hover {
+					background-color: $colorActiveChat;
+				}
+
+				.chat__logo {
+					border-radius: 50%;
+					background-color: $colorBg;
+					padding: 23.5px;
+					width: 17%;
+				}
+
+				.chat__content {
+					width: 63%;
+					margin-left: 15px;
+					margin-right: 10px;
+					line-height: 16px;
+					overflow: hidden;
+
+					.chat__title {
+						color: $colorBlack;
+						font-weight: 600;
+					}
+
+					.chat__massage {
+						font-size: 12px;
+						color: $colorGrey;
+						max-height: 30px;
+						cursor: pointer;
+						display: -webkit-box;
+						-webkit-line-clamp: 2;
+						-webkit-box-orient: vertical;
+						overflow: hidden;
+
+						.myMassage {
+							font-weight: 600;
+							color: $colorBlack;
+						}
+					}
+				}
+
+				.chat__option {
+					width: 20%;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					align-items: center;
+
+					.option_del {
+						width: 100%;
+						display: flex;
+						justify-content: flex-end;
+						padding-right: 7px;
+						transition: all 0.15s linear;
+						cursor: pointer;
+
+						&:hover {
+							color: $colorRed;
+						}
+					}
+
+					.option_lookTime {
+						font-size: 9px;
+						color: $colorGrey;
+					}
+
+					.newMassage {
+						@include blueCircle(20px);
+					}
+
+					._noActive {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+	.chatContent {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		width: 77.4%;
+
+		.noChoseChat {
+			font-size: 12px;
+			color: $colorGrey;
+		}
+	}
+}
