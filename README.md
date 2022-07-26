@@ -16,4 +16,4 @@ npm run start — запуск express сервера на http://localhost:3000
 ======================================================================================
 
 ссылка на deploy из Netlify
-https://deploy-preview-1--yandex-praktikum-messenger-sprint1.netlify.app/
+https://yandex-praktikum-messenger-sprint1.netlify.app/
