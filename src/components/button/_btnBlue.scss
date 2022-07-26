@@ -5,4 +5,10 @@
 	border-radius: 8px;
 	color: $colorWhite;
 	text-align: center;
+	transition: all 0.3s linear;
+
+	&:hover {
+		background-color: $colorGreen;
+		color: $colorFont;
+	}
 }

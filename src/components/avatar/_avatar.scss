@@ -2,15 +2,15 @@
 	margin-bottom: 60px;
 
 	.profile__avatar {
-		@include blueCircle(130px);
+		@include blueCircle(130px, 13px);
 		background-color: $colorBgImage;
 		margin-bottom: 21px;
 		cursor: pointer;
 		transition: all 0.3s linear;
 		position: relative;
 
-		img {
-			width: 50px;
+		.img {
+			width: 4rem;
 			object-fit: cover;
 		}
 
@@ -34,7 +34,7 @@
 		}
 	}
 
-	h3 {
+	.displayName {
 		text-align: center;
 		font-style: 16px;
 		font-weight: 600;

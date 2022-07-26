@@ -3,13 +3,10 @@ import button from '../../components/button';
 import input from '../../components/input';
 
 const props = {
+	title: 'Регистрация',
 	buttonBlue: button('registration', 'Зарегистрироваться'),
 	buttonText: button('enterAgain', 'Войти', '/'),
-	email: input('email', 'email'),
-	login: input('login', 'login'),
-	firstName: input('first_name', 'first_name'),
-	secondName: input('second_name', 'second_name'),
-	phone: input('phone', 'phone'),
+	inputReg: input('reg'),
 }
 
 export default tpl(props);

@@ -2,14 +2,12 @@ import tplPageError from './tplPageError.hbs';
 import button from '../button';
 
 const props1 = {
-	class: 'fourHundredFour__content',
 	title: '404',
 	text: 'Не туда попали',
 	choseChatAgain: button('choseChat_PageError404', 'назад к чатам', '/choseChat')
 }
 
 const props2 = {
-	class: 'fiveHundred__content',
 	title: '500',
 	text: 'Мы уже фиксим',
 	choseChatAgain: button('choseChat_PageError500', 'назад к чатам', '/choseChat')

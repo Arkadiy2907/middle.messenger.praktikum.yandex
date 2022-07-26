@@ -3,4 +3,9 @@
 	background-color: initial;
 	font-size: 11px;
 	color: $colorBlue;
+	transition: all 0.3s linear;
+
+	&:hover {
+		color: $colorBlack;
+	}
 }

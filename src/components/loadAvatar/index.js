@@ -30,8 +30,16 @@ const reloadFile = {
 }
 
 export default (type) => {
-	if (type === 'chooseFile') return tplLoadAvatar(chooseFile);
-	if (type === 'fileOk') return tplLoadAvatar(fileOk);
-	if (type === 'fileError') return tplLoadAvatar(fileError);
-	if (type === 'reloadFile') return tplLoadAvatar(reloadFile);
+	if (type === 'chooseFile') {
+		return tplLoadAvatar(chooseFile);
+	}
+	if (type === 'fileOk') {
+		return tplLoadAvatar(fileOk);
+	}
+	if (type === 'fileError') {
+		return tplLoadAvatar(fileError);
+	}
+	if (type === 'reloadFile') {
+		return tplLoadAvatar(reloadFile);
+	}
 }

@@ -1,7 +1,7 @@
 import tpl from './tpl.hbs';
 import fileError from '../../../components/loadAvatar';
 
-const props = {	
+const props = {
 	fileError: fileError(`fileError`)
 }
 
