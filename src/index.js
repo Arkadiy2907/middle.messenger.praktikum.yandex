@@ -11,8 +11,8 @@ import changePassword from './pages/changePassword';
 import loadAvatar from './pages/changeAvatar/chooseFile';
 import './scss/style.scss'
 
-// const root = document.getElementById('root');
- root.innerHTML = index; // for test routing 
+const root = document.getElementById('root');
+//  root.innerHTML = index; // for test routing 
 
 const routes = {
 	'/': index,
