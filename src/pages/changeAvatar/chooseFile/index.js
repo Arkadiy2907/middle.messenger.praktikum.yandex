@@ -1,7 +1,7 @@
 import tpl from './tpl.hbs';
 import chooseFile from '../../../components/loadAvatar';
 
-const props = {	
+const props = {
 	chooseFile: chooseFile(`chooseFile`)
 }
 

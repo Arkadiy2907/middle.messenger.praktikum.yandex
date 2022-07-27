@@ -1,16 +1,8 @@
 <div class="wrapper__index">
 	<div class="enterChat">
-		<form id="enterChat__form" class="enterChat__form" name="enterChat__form" action="/choseChat">
-			<h3>{{title}}</h3>
-			<div class="form-control">
-				{{{inputLogin}}}
-				<small>Error</small>
-			</div>
-			<div class="form-control last" id="form-control__pas">
-				<label for="password">Пароль</label>
-				<input type="password" id="password" name="password" class="password" placeholder="Пароль">
-				<small>Error</small>
-			</div>
+		<form id="enterChat__form" class="chat__form" name="enterChat__form" action="/choseChat">
+			<h1 class="title">{{title}}</h1>
+			{{{inputIndex}}}
 			{{{buttonBlue}}}
 		</form>
 		<div id="toRegistration__form" name="toRegistration__form">

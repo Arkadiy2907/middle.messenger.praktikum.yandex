@@ -6,7 +6,7 @@ const props = {
 	title: 'Вход',
 	buttonBlue: button('enter', 'Авторизоваться'),
 	buttonText: button('register', 'Нет аккаунта?', '/registration'),
-	inputLogin: input('login', 'login'),
+	inputIndex: input('index'),
 }
 
 export default tpl(props);

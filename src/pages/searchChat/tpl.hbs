@@ -9,25 +9,14 @@
 			</div>
 		</div>
 		<div class="searchChat">
+			<form id="searchChat__form" class="searchChat__form" name="searchChat_form" action="/searchChat">
 			<input type="text" id="search" class="search" name="search" placeholder="&#128269;&ensp;поиск">
+			{{{buttonBlue}}}
+			</form>
 		</div>
 		<ul class="chatsNow">
 			<li class="chat">
-				<div class="chat__logo"></div>
-				<div class="chat__content">
-					<h3 class="chat__title">Chat Online!</h3>
-					<a href="/chatOnline" class="chat__massage"><span class="myMassage">upss:</span> Lorem
-						i</a>
-				</div>
-				<div class="chat__option">
-					<div class="option_del">
-						<p>&#10006;</p>
-					</div>
-					<div class="option_lookTime">10:00</div>
-					<div class="newMassage">
-						<div class="newMassage_namber">2</div>
-					</div>
-				</div>
+			{{{chat1}}}
 			</li>
 		</ul>
 	</div>
@@ -43,20 +32,20 @@
 				</div>
 			</div>
 			<section class="data_Message">
-				<p class="data__contant">19 июня</p>
+				<time class="data__contant">19 июня</time>
 			</section>
 			<section class="massages">
 				<div class="massages__content">
-					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam autem rerum sint similique
+					<p class="content_text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam autem rerum sint similique
 						voluptatem iusto quidem aliquid, repellendus nihil, quibusdam sit omnis atque accusamus
 						maiores quia aspernatur numquam non repudiandae!</p>
-					<p class="time">11:00</p>
+					<time class="time">11:00</time>
 				</div>
 			</section>
 			<section class="massages">
 				<div class="massages__content">
-					<img src="{{src}}" alt="my_foto">
-					<p class="time">11:00</p>
+					<img class="img" src="{{src}}" alt="my_foto">
+					<time class="time">11:00</time>
 				</div>
 			</section>
 			<section class="my__massages">
@@ -65,7 +54,7 @@
 						temporibus consequatur magni. Reprehenderit amet sint, quibusdam ratione quis nisi quae,
 						deserunt eius accusantium consequatur dignissimos esse autem
 						provident.&emsp;<span>&#10003;&#10003;</span></p>
-					<p class="time">11:00</p>
+					<time class="time">11:00</time>
 				</div>
 			</section>
 			<div class="wrap__footer">
@@ -74,11 +63,7 @@
 					<div class="inputMassage">
 						<input type="text" id="massage" class="massage" name="massage" placeholder="Сообщение">
 					</div>
-					<div class="sendMassage">
-						<div><a href="#"><span>
-									&#8605;</span></a>
-						</div>
-					</div>
+					{{{sendMassge}}}
 				</div>
 			</div>
 		</div>

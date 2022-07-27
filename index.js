@@ -1,11 +1,11 @@
 require("./index.css");
-var $kxidu$handlebars = require("handlebars");
+var $fCOrg$handlebars = require("handlebars");
 
 function $parcel$interopDefault(a) {
   return a && a.__esModule ? a.default : a;
 }
 
-const $c69c50beaf78a5ee$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $56ca650d5b922a96$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -117,11 +117,11 @@ const $c69c50beaf78a5ee$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $c69c50beaf78a5ee$export$2e2bcd8739ae039 = $c69c50beaf78a5ee$var$templateFunction;
+var $56ca650d5b922a96$export$2e2bcd8739ae039 = $56ca650d5b922a96$var$templateFunction;
 
 
 
-const $b406c9560f551d5e$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $478f115c639c75c3$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -163,11 +163,11 @@ const $b406c9560f551d5e$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $b406c9560f551d5e$export$2e2bcd8739ae039 = $b406c9560f551d5e$var$templateFunction;
+var $478f115c639c75c3$export$2e2bcd8739ae039 = $478f115c639c75c3$var$templateFunction;
 
 
 
-const $1057ba434355d3b0$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $bb52fe7f6c4c27ad$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -223,21 +223,21 @@ const $1057ba434355d3b0$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $1057ba434355d3b0$export$2e2bcd8739ae039 = $1057ba434355d3b0$var$templateFunction;
+var $bb52fe7f6c4c27ad$export$2e2bcd8739ae039 = $bb52fe7f6c4c27ad$var$templateFunction;
 
 
-var $f6b8821452ccde9d$export$2e2bcd8739ae039 = (id, value, href)=>!!href ? (0, $1057ba434355d3b0$export$2e2bcd8739ae039)({
+var $daa7293aeae3f240$export$2e2bcd8739ae039 = (id, value, href)=>!!href ? (0, $bb52fe7f6c4c27ad$export$2e2bcd8739ae039)({
         id: id,
         value: value,
         href: href
-    }) : (0, $b406c9560f551d5e$export$2e2bcd8739ae039)({
+    }) : (0, $478f115c639c75c3$export$2e2bcd8739ae039)({
         id: id,
         value: value
     });
 
 
 
-const $70ae30c5eac28b05$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $84e02aee949db1e0$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -279,11 +279,11 @@ const $70ae30c5eac28b05$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $70ae30c5eac28b05$export$2e2bcd8739ae039 = $70ae30c5eac28b05$var$templateFunction;
+var $84e02aee949db1e0$export$2e2bcd8739ae039 = $84e02aee949db1e0$var$templateFunction;
 
 
 
-const $affd443aa775ed26$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $f815630723bdee9b$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -325,11 +325,11 @@ const $affd443aa775ed26$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $affd443aa775ed26$export$2e2bcd8739ae039 = $affd443aa775ed26$var$templateFunction;
+var $f815630723bdee9b$export$2e2bcd8739ae039 = $f815630723bdee9b$var$templateFunction;
 
 
 
-const $8c5cba2a83ba762b$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $20bcf3a92e44c520$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -371,11 +371,11 @@ const $8c5cba2a83ba762b$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $8c5cba2a83ba762b$export$2e2bcd8739ae039 = $8c5cba2a83ba762b$var$templateFunction;
+var $20bcf3a92e44c520$export$2e2bcd8739ae039 = $20bcf3a92e44c520$var$templateFunction;
 
 
 
-const $125e0d42a293a7f1$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $873b42a262dda1c1$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -417,11 +417,11 @@ const $125e0d42a293a7f1$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $125e0d42a293a7f1$export$2e2bcd8739ae039 = $125e0d42a293a7f1$var$templateFunction;
+var $873b42a262dda1c1$export$2e2bcd8739ae039 = $873b42a262dda1c1$var$templateFunction;
 
 
 
-const $24838b719841d14c$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $9bd631abf4e4fe50$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -463,11 +463,11 @@ const $24838b719841d14c$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $24838b719841d14c$export$2e2bcd8739ae039 = $24838b719841d14c$var$templateFunction;
+var $9bd631abf4e4fe50$export$2e2bcd8739ae039 = $9bd631abf4e4fe50$var$templateFunction;
 
 
 
-const $f8c6e2a852261cb9$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $d6d0a67769a0a612$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -509,34 +509,34 @@ const $f8c6e2a852261cb9$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $f8c6e2a852261cb9$export$2e2bcd8739ae039 = $f8c6e2a852261cb9$var$templateFunction;
+var $d6d0a67769a0a612$export$2e2bcd8739ae039 = $d6d0a67769a0a612$var$templateFunction;
 
 
-var $36f07593afd7ff6e$export$2e2bcd8739ae039 = (name, id)=>{
-    if (name === "email") return (0, $70ae30c5eac28b05$export$2e2bcd8739ae039)(id);
-    if (name === "login") return (0, $125e0d42a293a7f1$export$2e2bcd8739ae039)(id);
-    if (name === "first_name") return (0, $affd443aa775ed26$export$2e2bcd8739ae039)(id);
-    if (name === "second_name") return (0, $f8c6e2a852261cb9$export$2e2bcd8739ae039)(id);
-    if (name === "display_name") return (0, $8c5cba2a83ba762b$export$2e2bcd8739ae039)(id);
-    if (name === "phone") return (0, $24838b719841d14c$export$2e2bcd8739ae039)(id);
+var $90da0c6d52de8e0a$export$2e2bcd8739ae039 = (name, id)=>{
+    if (name === "email") return (0, $84e02aee949db1e0$export$2e2bcd8739ae039)(id);
+    if (name === "login") return (0, $873b42a262dda1c1$export$2e2bcd8739ae039)(id);
+    if (name === "first_name") return (0, $f815630723bdee9b$export$2e2bcd8739ae039)(id);
+    if (name === "second_name") return (0, $d6d0a67769a0a612$export$2e2bcd8739ae039)(id);
+    if (name === "display_name") return (0, $20bcf3a92e44c520$export$2e2bcd8739ae039)(id);
+    if (name === "phone") return (0, $9bd631abf4e4fe50$export$2e2bcd8739ae039)(id);
 };
 
 
-const $845e23a005e64899$var$props = {
-    buttonBlue: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("registration", "\u0417\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C\u0441\u044F"),
-    buttonText: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("enterAgain", "\u0412\u043E\u0439\u0442\u0438", "/"),
-    email: (0, $36f07593afd7ff6e$export$2e2bcd8739ae039)("email", "email"),
-    login: (0, $36f07593afd7ff6e$export$2e2bcd8739ae039)("login", "login"),
-    first_name: (0, $36f07593afd7ff6e$export$2e2bcd8739ae039)("first_name", "first_name"),
-    second_name: (0, $36f07593afd7ff6e$export$2e2bcd8739ae039)("second_name", "second_name"),
-    display_name: (0, $36f07593afd7ff6e$export$2e2bcd8739ae039)("display_name", "display_name"),
-    phone: (0, $36f07593afd7ff6e$export$2e2bcd8739ae039)("phone", "phone")
+const $066cd412b675e7d6$var$props = {
+    buttonBlue: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("registration", "\u0417\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043E\u0432\u0430\u0442\u044C\u0441\u044F"),
+    buttonText: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("enterAgain", "\u0412\u043E\u0439\u0442\u0438", "/"),
+    email: (0, $90da0c6d52de8e0a$export$2e2bcd8739ae039)("email", "email"),
+    login: (0, $90da0c6d52de8e0a$export$2e2bcd8739ae039)("login", "login"),
+    first_name: (0, $90da0c6d52de8e0a$export$2e2bcd8739ae039)("first_name", "first_name"),
+    second_name: (0, $90da0c6d52de8e0a$export$2e2bcd8739ae039)("second_name", "second_name"),
+    display_name: (0, $90da0c6d52de8e0a$export$2e2bcd8739ae039)("display_name", "display_name"),
+    phone: (0, $90da0c6d52de8e0a$export$2e2bcd8739ae039)("phone", "phone")
 };
-var $845e23a005e64899$export$2e2bcd8739ae039 = (0, $c69c50beaf78a5ee$export$2e2bcd8739ae039)($845e23a005e64899$var$props);
+var $066cd412b675e7d6$export$2e2bcd8739ae039 = (0, $56ca650d5b922a96$export$2e2bcd8739ae039)($066cd412b675e7d6$var$props);
 
 
 
-const $52798990c1365e21$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $a0338c3b0b8a5804$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -578,24 +578,24 @@ const $52798990c1365e21$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $52798990c1365e21$export$2e2bcd8739ae039 = $52798990c1365e21$var$templateFunction;
+var $a0338c3b0b8a5804$export$2e2bcd8739ae039 = $a0338c3b0b8a5804$var$templateFunction;
 
 
 
-var $f45a8e53f01144c6$exports = {};
-$f45a8e53f01144c6$exports = new URL("78.884df5d6.png", "file:" + __filename).toString();
+var $f2a90527a6ccfd98$exports = {};
+$f2a90527a6ccfd98$exports = new URL("78.884df5d6.png", "file:" + __filename).toString();
 
 
-const $76cfec9958bfa4af$var$props = {
-    src: `${(0, (/*@__PURE__*/$parcel$interopDefault($f45a8e53f01144c6$exports)))}`,
-    signOut: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("signOutBtn_chooseChat", "\u0432\u0432\u044B\u0445\u043E\u0434 \u0438\u0437 \u043F\u0440\u043E\u0444\u0438\u043B\u044F", "/"),
-    inProfile: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("inProfileBtn_chooseChat", "\u043F\u0440\u043E\u0444\u0438\u043B\u044C", "/profile")
+const $1b8ae6af6c408200$var$props = {
+    src: `${(0, (/*@__PURE__*/$parcel$interopDefault($f2a90527a6ccfd98$exports)))}`,
+    signOut: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("signOutBtn_chooseChat", "\u0432\u0432\u044B\u0445\u043E\u0434 \u0438\u0437 \u043F\u0440\u043E\u0444\u0438\u043B\u044F", "/"),
+    inProfile: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("inProfileBtn_chooseChat", "\u043F\u0440\u043E\u0444\u0438\u043B\u044C", "/profile")
 };
-var $76cfec9958bfa4af$export$2e2bcd8739ae039 = (0, $52798990c1365e21$export$2e2bcd8739ae039)($76cfec9958bfa4af$var$props);
+var $1b8ae6af6c408200$export$2e2bcd8739ae039 = (0, $a0338c3b0b8a5804$export$2e2bcd8739ae039)($1b8ae6af6c408200$var$props);
 
 
 
-const $aeb61236f7e321f8$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $361d33ed5309822d$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -651,21 +651,21 @@ const $aeb61236f7e321f8$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $aeb61236f7e321f8$export$2e2bcd8739ae039 = $aeb61236f7e321f8$var$templateFunction;
+var $361d33ed5309822d$export$2e2bcd8739ae039 = $361d33ed5309822d$var$templateFunction;
 
 
 
 
-const $cf6441ca4e4570f2$var$props = {
-    src: `${(0, (/*@__PURE__*/$parcel$interopDefault($f45a8e53f01144c6$exports)))}`,
-    signOut: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("signOutBtn", "\u0432\u0432\u044B\u0445\u043E\u0434 \u0438\u0437 \u043F\u0440\u043E\u0444\u0438\u043B\u044F", "/"),
-    inProfile: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("inProfileBtn", "\u043F\u0440\u043E\u0444\u0438\u043B\u044C", "/profile")
+const $8aad2642cdd65204$var$props = {
+    src: `${(0, (/*@__PURE__*/$parcel$interopDefault($f2a90527a6ccfd98$exports)))}`,
+    signOut: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("signOutBtn", "\u0432\u0432\u044B\u0445\u043E\u0434 \u0438\u0437 \u043F\u0440\u043E\u0444\u0438\u043B\u044F", "/"),
+    inProfile: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("inProfileBtn", "\u043F\u0440\u043E\u0444\u0438\u043B\u044C", "/profile")
 };
-var $cf6441ca4e4570f2$export$2e2bcd8739ae039 = (0, $aeb61236f7e321f8$export$2e2bcd8739ae039)($cf6441ca4e4570f2$var$props);
+var $8aad2642cdd65204$export$2e2bcd8739ae039 = (0, $361d33ed5309822d$export$2e2bcd8739ae039)($8aad2642cdd65204$var$props);
 
 
 
-const $4382da5adf685d3c$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $fd98b3e0cab87cb5$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -693,11 +693,11 @@ const $4382da5adf685d3c$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $4382da5adf685d3c$export$2e2bcd8739ae039 = $4382da5adf685d3c$var$templateFunction;
+var $fd98b3e0cab87cb5$export$2e2bcd8739ae039 = $fd98b3e0cab87cb5$var$templateFunction;
 
 
 
-const $25db7695cb161e0b$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $5ca4b94fc5821367$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -767,33 +767,33 @@ const $25db7695cb161e0b$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $25db7695cb161e0b$export$2e2bcd8739ae039 = $25db7695cb161e0b$var$templateFunction;
+var $5ca4b94fc5821367$export$2e2bcd8739ae039 = $5ca4b94fc5821367$var$templateFunction;
 
 
 
-const $930996121c1b74a5$var$props1 = {
+const $ba8aad201c310730$var$props1 = {
     class: "fourHundredFour__content",
     title: "404",
     text: "\u041D\u0435 \u0442\u0443\u0434\u0430 \u043F\u043E\u043F\u0430\u043B\u0438",
-    choseChatAgain: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("choseChat_PageError404", "\u043D\u0430\u0437\u0430\u0434 \u043A \u0447\u0430\u0442\u0430\u043C", "/choseChat")
+    choseChatAgain: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("choseChat_PageError404", "\u043D\u0430\u0437\u0430\u0434 \u043A \u0447\u0430\u0442\u0430\u043C", "/choseChat")
 };
-const $930996121c1b74a5$var$props2 = {
+const $ba8aad201c310730$var$props2 = {
     class: "fiveHundred__content",
     title: "500",
     text: "\u041C\u044B \u0443\u0436\u0435 \u0444\u0438\u043A\u0441\u0438\u043C",
-    choseChatAgain: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("choseChat_PageError500", "\u043D\u0430\u0437\u0430\u0434 \u043A \u0447\u0430\u0442\u0430\u043C", "/choseChat")
+    choseChatAgain: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("choseChat_PageError500", "\u043D\u0430\u0437\u0430\u0434 \u043A \u0447\u0430\u0442\u0430\u043C", "/choseChat")
 };
-var $930996121c1b74a5$export$2e2bcd8739ae039 = (type)=>type === "404" ? (0, $25db7695cb161e0b$export$2e2bcd8739ae039)($930996121c1b74a5$var$props1) : (0, $25db7695cb161e0b$export$2e2bcd8739ae039)($930996121c1b74a5$var$props2);
+var $ba8aad201c310730$export$2e2bcd8739ae039 = (type)=>type === "404" ? (0, $5ca4b94fc5821367$export$2e2bcd8739ae039)($ba8aad201c310730$var$props1) : (0, $5ca4b94fc5821367$export$2e2bcd8739ae039)($ba8aad201c310730$var$props2);
 
 
-const $b9f5022503e628ff$var$props = {
-    pageError404: (0, $930996121c1b74a5$export$2e2bcd8739ae039)("404")
+const $cbf1479dc6c41d2b$var$props = {
+    pageError404: (0, $ba8aad201c310730$export$2e2bcd8739ae039)("404")
 };
-var $b9f5022503e628ff$export$2e2bcd8739ae039 = (0, $4382da5adf685d3c$export$2e2bcd8739ae039)($b9f5022503e628ff$var$props);
+var $cbf1479dc6c41d2b$export$2e2bcd8739ae039 = (0, $fd98b3e0cab87cb5$export$2e2bcd8739ae039)($cbf1479dc6c41d2b$var$props);
 
 
 
-const $a229a37e85ec2805$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $a2666574ed80c23c$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -821,18 +821,18 @@ const $a229a37e85ec2805$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $a229a37e85ec2805$export$2e2bcd8739ae039 = $a229a37e85ec2805$var$templateFunction;
+var $a2666574ed80c23c$export$2e2bcd8739ae039 = $a2666574ed80c23c$var$templateFunction;
 
 
 
-const $840b429d8fa119d7$var$props = {
-    pageError500: (0, $930996121c1b74a5$export$2e2bcd8739ae039)("500")
+const $4125d4b1a6cc34e2$var$props = {
+    pageError500: (0, $ba8aad201c310730$export$2e2bcd8739ae039)("500")
 };
-var $840b429d8fa119d7$export$2e2bcd8739ae039 = (0, $a229a37e85ec2805$export$2e2bcd8739ae039)($840b429d8fa119d7$var$props);
+var $4125d4b1a6cc34e2$export$2e2bcd8739ae039 = (0, $a2666574ed80c23c$export$2e2bcd8739ae039)($4125d4b1a6cc34e2$var$props);
 
 
 
-const $4936117fd263b8b1$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $bf2e61056e8eaac4$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -902,22 +902,22 @@ const $4936117fd263b8b1$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $4936117fd263b8b1$export$2e2bcd8739ae039 = $4936117fd263b8b1$var$templateFunction;
+var $bf2e61056e8eaac4$export$2e2bcd8739ae039 = $bf2e61056e8eaac4$var$templateFunction;
 
 
 
 
-const $d03802c689cb7b1d$var$props = {
+const $2d5b7d5ca01bf14e$var$props = {
     title: "\u0412\u0445\u043E\u0434",
-    buttonBlue: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("enter", "\u0410\u0432\u0442\u043E\u0440\u0438\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F"),
-    buttonText: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("register", "\u041D\u0435\u0442 \u0430\u043A\u043A\u0430\u0443\u043D\u0442\u0430?", "/registration"),
-    inputLogin: (0, $36f07593afd7ff6e$export$2e2bcd8739ae039)("login", "login")
+    buttonBlue: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("enter", "\u0410\u0432\u0442\u043E\u0440\u0438\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F"),
+    buttonText: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("register", "\u041D\u0435\u0442 \u0430\u043A\u043A\u0430\u0443\u043D\u0442\u0430?", "/registration"),
+    inputLogin: (0, $90da0c6d52de8e0a$export$2e2bcd8739ae039)("login", "login")
 };
-var $d03802c689cb7b1d$export$2e2bcd8739ae039 = (0, $4936117fd263b8b1$export$2e2bcd8739ae039)($d03802c689cb7b1d$var$props);
+var $2d5b7d5ca01bf14e$export$2e2bcd8739ae039 = (0, $bf2e61056e8eaac4$export$2e2bcd8739ae039)($2d5b7d5ca01bf14e$var$props);
 
 
 
-const $962ab7eafff43f28$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $6691b02ba7c9fd69$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -987,12 +987,12 @@ const $962ab7eafff43f28$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $962ab7eafff43f28$export$2e2bcd8739ae039 = $962ab7eafff43f28$var$templateFunction;
+var $6691b02ba7c9fd69$export$2e2bcd8739ae039 = $6691b02ba7c9fd69$var$templateFunction;
 
 
 
 
-const $939f2f041cb6321c$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $6d769bd18d3cffcc$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -1034,30 +1034,30 @@ const $939f2f041cb6321c$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $939f2f041cb6321c$export$2e2bcd8739ae039 = $939f2f041cb6321c$var$templateFunction;
+var $6d769bd18d3cffcc$export$2e2bcd8739ae039 = $6d769bd18d3cffcc$var$templateFunction;
 
 
-var $041259f80c6bdf72$export$2e2bcd8739ae039 = (src, displayName)=>(0, $939f2f041cb6321c$export$2e2bcd8739ae039)({
+var $b374def2d9ba6811$export$2e2bcd8739ae039 = (src, displayName)=>(0, $6d769bd18d3cffcc$export$2e2bcd8739ae039)({
         src: src,
         displayName: displayName
     });
 
 
-var $b689ea58369a6a78$exports = {};
-$b689ea58369a6a78$exports = new URL("cat.5ff3e4b7.png", "file:" + __filename).toString();
+var $37811cf95483e396$exports = {};
+$37811cf95483e396$exports = new URL("cat.5ff3e4b7.png", "file:" + __filename).toString();
 
 
-const $1277baca73f8202c$var$props = {
-    buttonTextOut: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("sign_outProfile", "\u0412\u044B\u0439\u0442\u0438", "/"),
-    changePassword_btn: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("changePassword_btn", "\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u043F\u0430\u0440\u043E\u043B\u044C", "/changePassword"),
-    changeProfile_btn: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("changeProfile_btn", "\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u0434\u0430\u043D\u043D\u044B\u0435", "/changeProfile"),
-    avatarLog: (0, $041259f80c6bdf72$export$2e2bcd8739ae039)(`${(0, (/*@__PURE__*/$parcel$interopDefault($b689ea58369a6a78$exports)))}`, "\u0418\u0432\u0430\u043D")
+const $53b94ec840727244$var$props = {
+    buttonTextOut: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("sign_outProfile", "\u0412\u044B\u0439\u0442\u0438", "/"),
+    changePassword_btn: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("changePassword_btn", "\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u043F\u0430\u0440\u043E\u043B\u044C", "/changePassword"),
+    changeProfile_btn: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("changeProfile_btn", "\u0418\u0437\u043C\u0435\u043D\u0438\u0442\u044C \u0434\u0430\u043D\u043D\u044B\u0435", "/changeProfile"),
+    avatarLog: (0, $b374def2d9ba6811$export$2e2bcd8739ae039)(`${(0, (/*@__PURE__*/$parcel$interopDefault($37811cf95483e396$exports)))}`, "\u0418\u0432\u0430\u043D")
 };
-var $1277baca73f8202c$export$2e2bcd8739ae039 = (0, $962ab7eafff43f28$export$2e2bcd8739ae039)($1277baca73f8202c$var$props);
+var $53b94ec840727244$export$2e2bcd8739ae039 = (0, $6691b02ba7c9fd69$export$2e2bcd8739ae039)($53b94ec840727244$var$props);
 
 
 
-const $46f871d39cc067aa$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $9e657c2464df6610$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -1183,27 +1183,27 @@ const $46f871d39cc067aa$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $46f871d39cc067aa$export$2e2bcd8739ae039 = $46f871d39cc067aa$var$templateFunction;
+var $9e657c2464df6610$export$2e2bcd8739ae039 = $9e657c2464df6610$var$templateFunction;
 
 
 
 
 
 
-const $eda115f40990e01f$var$props = {
-    btn_save: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("btn_saveChange", "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C"),
-    avatarLog: (0, $041259f80c6bdf72$export$2e2bcd8739ae039)(`${(0, (/*@__PURE__*/$parcel$interopDefault($b689ea58369a6a78$exports)))}`, "\u0418\u0432\u0430\u043D"),
-    email: (0, $36f07593afd7ff6e$export$2e2bcd8739ae039)("email", "email"),
-    login: (0, $36f07593afd7ff6e$export$2e2bcd8739ae039)("login", "login"),
-    first_name: (0, $36f07593afd7ff6e$export$2e2bcd8739ae039)("first_name", "first_name"),
-    second_name: (0, $36f07593afd7ff6e$export$2e2bcd8739ae039)("second_name", "second_name"),
-    phone: (0, $36f07593afd7ff6e$export$2e2bcd8739ae039)("phone", "phone")
+const $3359806e6a8ec9a0$var$props = {
+    btn_save: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("btn_saveChange", "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C"),
+    avatarLog: (0, $b374def2d9ba6811$export$2e2bcd8739ae039)(`${(0, (/*@__PURE__*/$parcel$interopDefault($37811cf95483e396$exports)))}`, "\u0418\u0432\u0430\u043D"),
+    email: (0, $90da0c6d52de8e0a$export$2e2bcd8739ae039)("email", "email"),
+    login: (0, $90da0c6d52de8e0a$export$2e2bcd8739ae039)("login", "login"),
+    first_name: (0, $90da0c6d52de8e0a$export$2e2bcd8739ae039)("first_name", "first_name"),
+    second_name: (0, $90da0c6d52de8e0a$export$2e2bcd8739ae039)("second_name", "second_name"),
+    phone: (0, $90da0c6d52de8e0a$export$2e2bcd8739ae039)("phone", "phone")
 };
-var $eda115f40990e01f$export$2e2bcd8739ae039 = (0, $46f871d39cc067aa$export$2e2bcd8739ae039)($eda115f40990e01f$var$props);
+var $3359806e6a8ec9a0$export$2e2bcd8739ae039 = (0, $9e657c2464df6610$export$2e2bcd8739ae039)($3359806e6a8ec9a0$var$props);
 
 
 
-const $d16033829b46d129$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $cfe3c61e0f2a99eb$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -1245,21 +1245,21 @@ const $d16033829b46d129$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $d16033829b46d129$export$2e2bcd8739ae039 = $d16033829b46d129$var$templateFunction;
+var $cfe3c61e0f2a99eb$export$2e2bcd8739ae039 = $cfe3c61e0f2a99eb$var$templateFunction;
 
 
 
 
 
-const $d4b7c083e143d180$var$props = {
-    btn_saveCangePasword: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("btn_saveCangePasword", "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C"),
-    avatarLog: (0, $041259f80c6bdf72$export$2e2bcd8739ae039)(`${(0, (/*@__PURE__*/$parcel$interopDefault($b689ea58369a6a78$exports)))}`, "\u0418\u0432\u0430\u043D")
+const $17d63dc420abc240$var$props = {
+    btn_saveCangePasword: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("btn_saveCangePasword", "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C"),
+    avatarLog: (0, $b374def2d9ba6811$export$2e2bcd8739ae039)(`${(0, (/*@__PURE__*/$parcel$interopDefault($37811cf95483e396$exports)))}`, "\u0418\u0432\u0430\u043D")
 };
-var $d4b7c083e143d180$export$2e2bcd8739ae039 = (0, $d16033829b46d129$export$2e2bcd8739ae039)($d4b7c083e143d180$var$props);
+var $17d63dc420abc240$export$2e2bcd8739ae039 = (0, $cfe3c61e0f2a99eb$export$2e2bcd8739ae039)($17d63dc420abc240$var$props);
 
 
 
-const $be818b5caa3e0f3f$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $ca3966e6f2fc3b1b$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -1287,11 +1287,11 @@ const $be818b5caa3e0f3f$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $be818b5caa3e0f3f$export$2e2bcd8739ae039 = $be818b5caa3e0f3f$var$templateFunction;
+var $ca3966e6f2fc3b1b$export$2e2bcd8739ae039 = $ca3966e6f2fc3b1b$var$templateFunction;
 
 
 
-const $13285da9e16eb5ce$var$templateFunction = (0, ($parcel$interopDefault($kxidu$handlebars))).template({
+const $8f5c63e21644a59c$var$templateFunction = (0, ($parcel$interopDefault($fCOrg$handlebars))).template({
     "compiler": [
         8,
         ">= 4.3.0"
@@ -1361,65 +1361,65 @@ const $13285da9e16eb5ce$var$templateFunction = (0, ($parcel$interopDefault($kxid
     },
     "useData": true
 });
-var $13285da9e16eb5ce$export$2e2bcd8739ae039 = $13285da9e16eb5ce$var$templateFunction;
+var $8f5c63e21644a59c$export$2e2bcd8739ae039 = $8f5c63e21644a59c$var$templateFunction;
 
 
 
-const $5e790537e69a174f$var$chooseFile = {
+const $2e02e0a65fa88464$var$chooseFile = {
     title: "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u0435 \u0444\u0430\u0439\u043B",
-    chooseFile: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("loadFile_chooseFile", "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0444\u0430\u0439\u043B \u043D\u0430 \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u0435", "#"),
-    buttonBlue: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("loadFile_chooseFileBlue", "\u041F\u043E\u043C\u0435\u043D\u044F\u0442\u044C"),
+    chooseFile: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("loadFile_chooseFile", "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0444\u0430\u0439\u043B \u043D\u0430 \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u0435", "#"),
+    buttonBlue: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("loadFile_chooseFileBlue", "\u041F\u043E\u043C\u0435\u043D\u044F\u0442\u044C"),
     message: ""
 };
-const $5e790537e69a174f$var$fileOk = {
+const $2e02e0a65fa88464$var$fileOk = {
     title: "\u0424\u0430\u0439\u043B \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043D",
-    chooseFile: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("loadFile_fileOk", "pic.jpg", "#"),
-    buttonBlue: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("loadFile_fileOkBlue", "\u041F\u043E\u043C\u0435\u043D\u044F\u0442\u044C"),
+    chooseFile: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("loadFile_fileOk", "pic.jpg", "#"),
+    buttonBlue: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("loadFile_fileOkBlue", "\u041F\u043E\u043C\u0435\u043D\u044F\u0442\u044C"),
     message: ""
 };
-const $5e790537e69a174f$var$fileError = {
+const $2e02e0a65fa88464$var$fileError = {
     title: "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u0435 \u0444\u0430\u0439\u043B",
-    chooseFile: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("loadFile_chooseFileNoError", "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0444\u0430\u0439\u043B \u043D\u0430 \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u0435", "#"),
-    buttonBlue: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("loadFile_changeFileNoErrorBlue", "\u041F\u043E\u043C\u0435\u043D\u044F\u0442\u044C"),
+    chooseFile: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("loadFile_chooseFileNoError", "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0444\u0430\u0439\u043B \u043D\u0430 \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u0435", "#"),
+    buttonBlue: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("loadFile_changeFileNoErrorBlue", "\u041F\u043E\u043C\u0435\u043D\u044F\u0442\u044C"),
     message: "\u041D\u0443\u0436\u043D\u043E \u0432\u044B\u0431\u0440\u0430\u0442\u044C \u0444\u0430\u0439\u043B"
 };
-const $5e790537e69a174f$var$reloadFile = {
+const $2e02e0a65fa88464$var$reloadFile = {
     title: "\u041E\u0448\u0438\u0431\u043A\u0430, \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0451 \u0440\u0430\u0437",
-    chooseFile: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("loadFile_reloadFile", "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0444\u0430\u0439\u043B \u043D\u0430 \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u0435", "#"),
-    buttonBlue: (0, $f6b8821452ccde9d$export$2e2bcd8739ae039)("loadFile_reloadFileBlue", "\u041F\u043E\u043C\u0435\u043D\u044F\u0442\u044C"),
+    chooseFile: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("loadFile_reloadFile", "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0444\u0430\u0439\u043B \u043D\u0430 \u043A\u043E\u043C\u043F\u044C\u044E\u0442\u0435\u0440\u0435", "#"),
+    buttonBlue: (0, $daa7293aeae3f240$export$2e2bcd8739ae039)("loadFile_reloadFileBlue", "\u041F\u043E\u043C\u0435\u043D\u044F\u0442\u044C"),
     message: ""
 };
-var $5e790537e69a174f$export$2e2bcd8739ae039 = (type)=>{
-    if (type === "chooseFile") return (0, $13285da9e16eb5ce$export$2e2bcd8739ae039)($5e790537e69a174f$var$chooseFile);
-    if (type === "fileOk") return (0, $13285da9e16eb5ce$export$2e2bcd8739ae039)($5e790537e69a174f$var$fileOk);
-    if (type === "fileError") return (0, $13285da9e16eb5ce$export$2e2bcd8739ae039)($5e790537e69a174f$var$fileError);
-    if (type === "reloadFile") return (0, $13285da9e16eb5ce$export$2e2bcd8739ae039)($5e790537e69a174f$var$reloadFile);
+var $2e02e0a65fa88464$export$2e2bcd8739ae039 = (type)=>{
+    if (type === "chooseFile") return (0, $8f5c63e21644a59c$export$2e2bcd8739ae039)($2e02e0a65fa88464$var$chooseFile);
+    if (type === "fileOk") return (0, $8f5c63e21644a59c$export$2e2bcd8739ae039)($2e02e0a65fa88464$var$fileOk);
+    if (type === "fileError") return (0, $8f5c63e21644a59c$export$2e2bcd8739ae039)($2e02e0a65fa88464$var$fileError);
+    if (type === "reloadFile") return (0, $8f5c63e21644a59c$export$2e2bcd8739ae039)($2e02e0a65fa88464$var$reloadFile);
 };
 
 
-const $7cf304e38ed3c72f$var$props = {
-    chooseFile: (0, $5e790537e69a174f$export$2e2bcd8739ae039)(`chooseFile`)
+const $6bda7484bf0e7983$var$props = {
+    chooseFile: (0, $2e02e0a65fa88464$export$2e2bcd8739ae039)(`chooseFile`)
 };
-var $7cf304e38ed3c72f$export$2e2bcd8739ae039 = (0, $be818b5caa3e0f3f$export$2e2bcd8739ae039)($7cf304e38ed3c72f$var$props);
+var $6bda7484bf0e7983$export$2e2bcd8739ae039 = (0, $ca3966e6f2fc3b1b$export$2e2bcd8739ae039)($6bda7484bf0e7983$var$props);
 
 
 
-const $75d97312584cf6b6$var$root = document.getElementById("root");
-const $75d97312584cf6b6$var$routes = {
-    "/": (0, $d03802c689cb7b1d$export$2e2bcd8739ae039),
-    "/registration": (0, $845e23a005e64899$export$2e2bcd8739ae039),
-    "/choseChat": (0, $76cfec9958bfa4af$export$2e2bcd8739ae039),
-    "/chatOnline": (0, $cf6441ca4e4570f2$export$2e2bcd8739ae039),
-    "/fourHundredFour": (0, $b9f5022503e628ff$export$2e2bcd8739ae039),
-    "/fiveHundred": (0, $840b429d8fa119d7$export$2e2bcd8739ae039),
-    "/profile": (0, $1277baca73f8202c$export$2e2bcd8739ae039),
-    "/changeProfile": (0, $eda115f40990e01f$export$2e2bcd8739ae039),
-    "/changePassword": (0, $d4b7c083e143d180$export$2e2bcd8739ae039),
-    "/loadAvatar": (0, $7cf304e38ed3c72f$export$2e2bcd8739ae039)
+const $c50e7c435ce40c6f$var$root = document.getElementById("root");
+const $c50e7c435ce40c6f$var$routes = {
+    "/": (0, $2d5b7d5ca01bf14e$export$2e2bcd8739ae039),
+    "/registration": (0, $066cd412b675e7d6$export$2e2bcd8739ae039),
+    "/choseChat": (0, $1b8ae6af6c408200$export$2e2bcd8739ae039),
+    "/chatOnline": (0, $8aad2642cdd65204$export$2e2bcd8739ae039),
+    "/fourHundredFour": (0, $cbf1479dc6c41d2b$export$2e2bcd8739ae039),
+    "/fiveHundred": (0, $4125d4b1a6cc34e2$export$2e2bcd8739ae039),
+    "/profile": (0, $53b94ec840727244$export$2e2bcd8739ae039),
+    "/changeProfile": (0, $3359806e6a8ec9a0$export$2e2bcd8739ae039),
+    "/changePassword": (0, $17d63dc420abc240$export$2e2bcd8739ae039),
+    "/loadAvatar": (0, $6bda7484bf0e7983$export$2e2bcd8739ae039)
 };
 window.onload = function() {
     const path = window.location.pathname;
-    Object.keys($75d97312584cf6b6$var$routes).find((el)=>el === path) ? $75d97312584cf6b6$var$root.innerHTML = $75d97312584cf6b6$var$routes[path] : $75d97312584cf6b6$var$root.innerHTML = (0, $b9f5022503e628ff$export$2e2bcd8739ae039);
+    Object.keys($c50e7c435ce40c6f$var$routes).find((el)=>el === path) ? $c50e7c435ce40c6f$var$root.innerHTML = $c50e7c435ce40c6f$var$routes[path] : $c50e7c435ce40c6f$var$root.innerHTML = (0, $cbf1479dc6c41d2b$export$2e2bcd8739ae039);
 };
 
 

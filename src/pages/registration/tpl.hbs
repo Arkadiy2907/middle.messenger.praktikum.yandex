@@ -1,38 +1,8 @@
 <div class="wrapper__registration">
 	<div class="registration">
-		<form id="registration__form" class="registration__form" name="registration__form" action="/choseChat">
-			<h3>Регистрация</h3>
-			<div class="form-control">
-				{{{email}}}
-				<small>Error</small>
-			</div>
-			<div class="form-control">
-				{{{login}}}
-				<small>Error</small>
-			</div>
-			<div class="form-control">
-				{{{first_name}}}
-				<small>Error</small>
-			</div>
-			<div class="form-control">
-				{{{second_name}}}
-				<small>Error</small>
-			</div>
-			<div class="form-control">
-				{{{phone}}}
-				<small>Error</small>
-			</div>
-			<div class="form-control" id="form-control__pas">
-				<label for="password">Пароль</label>
-				<input type="password" id="password" name="password" class="password" placeholder="Пароль">
-				<small>Error</small>
-			</div>
-			<div class="form-control last" id="form-control__pas">
-				<label for="passwordRegTwo">Пароль (ещё раз)</label>
-				<input type="password" id="passwordRegTwo" name="passwordRegTwo" class="passwordRegTwo"
-					placeholder="Пароль">
-				<small>Error</small>
-			</div>
+		<form id="registration__form" class="chat__form" name="registration__form" action="/choseChat">
+			<h2 class="title">{{title}}</h2>
+			{{{inputReg}}}
 			{{{buttonBlue}}}
 		</form>
 		<div>

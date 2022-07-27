@@ -1,32 +1,13 @@
 <div class="wrapper__profileChangePasword">
-	<div class="wrap__arrow">
-		<div class="blueCircle">
-			<div><a href="/profile"><span>&#8678;</span></a></div>
-		</div>
-	</div>
+	{{{prevArrow}}}
 	<div class="content">
 		<div class="profile">
 			{{{avatarLog}}}
-			<form id="changePassword__form" class="changePassword__form" name="changePassword__form" action="/profile">
-				<div class="form-control" id="form-control__pas">
-					<label for="oldPassword">Старый пароль</label>
-					<input type="password" id="oldPassword" name="oldPassword" class="oldPassword" value="Пароль">
-					<small>Error</small>
-				</div>
-				<div class="form-control" id="form-control__newPassword">
-					<label for="newPassword">Новый пароль</label>
-					<input type="password" id="newPassword" name="newPassword" class="password" value="Пароль">
-					<small>Error</small>
-				</div>
-				<div class="form-control" id="form-control__newPasswordTwo">
-					<label for="newPasswordTwo">Повторите новый пароль</label>
-					<input type="password" id="newPasswordTwo" name="newPasswordTwo" class="newPasswordTwo"
-						value="Пароль">
-					<small>Error</small>
-				</div>
+			<form id="changePassword__form" class="profile__form" name="changePassword__form" action="/profile">
+				{{{profilePas}}}
 				<div class="wrap__btn">
 					<div class="btn_width">
-						{{{btn_saveCangePasword}}}
+						{{{btnSaveCangePasword}}}
 					</div>
 				</div>
 			</form>
