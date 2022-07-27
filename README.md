@@ -1,4 +1,3 @@
-
 sprint_1
 
 Chat - приложение для обмена сообщениями
@@ -16,3 +15,4 @@ npm run start — запуск express сервера на http://localhost:3000
 ======================================================================================
 
 ссылка на deploy из Netlify
+https://yandex-praktikum-messenger-sprint1.netlify.app/
