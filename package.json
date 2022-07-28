@@ -1,0 +1,44 @@
+{
+  "name": "middle.messenger.praktikum.yandex",
+  "version": "1.0.1",
+  "source": "src/index.html",
+  "scripts": {
+    "dev": "parcel src/index.html --open --port 3000 --no-source-maps --no-cache",
+    "build": "parcel build src/index.html",
+    "start": "node server.js"
+  },
+  "author": "Arkadiy",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.6.2",
+    "parcel": "2.6.2",
+    "parcel-transformer-hbs": "1.0.4",
+    "sass": "1.54.0"
+  },
+  "targets": {
+    "default": {
+      "sourceMap": true,
+      "includeNodeModules": [
+        "handlebars"
+      ],
+      "context": "browser",
+      "distDir": "./dist"
+    }
+  },
+  "dependencies": {
+    "express": "4.18.1",
+    "handlebars": "4.7.7"
+  },
+  "engines": {
+    "node": "v16.x"
+  },
+  "description": "Chat - приложение для обмена сообщениями",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arkadiy2907/middle.messenger.praktikum.yandex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Arkadiy2907/middle.messenger.praktikum.yandex/issues"
+  },
+  "homepage": "https://github.com/Arkadiy2907/middle.messenger.praktikum.yandex#readme"
+}

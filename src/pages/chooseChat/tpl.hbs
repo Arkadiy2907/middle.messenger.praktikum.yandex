@@ -1,0 +1,37 @@
+<div class="wrapper__choseChat">
+	<div class="allChats">
+		<div class="profile">
+			<div class="profile__outProfile">
+				<span>&lt;</span>{{{signOut}}}
+			</div>
+			<div class="profile__inProfile">
+				{{{inProfile}}}<span> &gt;</span>
+			</div>
+		</div>
+		<div class="searchChat">
+			<form id="searchChat__form" class="searchChat__form" name="searchChat_form" action="/searchChat">
+				<input type="text" id="search" class="search" name="search" placeholder="&#128269;&ensp;поиск">
+				{{{buttonBlue}}}
+			</form>
+		</div>
+		<ul class="chatsNow">
+			<li class="chat">
+				{{{chat1}}}
+			</li>
+			<li class="chat">
+				{{{chat2}}}
+			</li>
+			<li class="chat">
+				{{{chat3}}}
+			</li>
+			<li class="chat">
+				{{{chat4}}}
+			</li>
+		</ul>
+	</div>
+	<div class="chatContent">
+		<div class="noChoseChat">
+			<p>Выберите чат чтобы отправить сообщение</p>
+		</div>
+	</div>
+</div>
