@@ -3,8 +3,38 @@
 	<div class="content">
 		<div class="profile">
 			{{{avatarLog}}}
-			<form id="changeProfile__form" class="profile__form" name="changeProfile__form" action="/profile">
-				{{{changeProfile}}}
+			<form class="profile__form form" name="changeProfile__form" action="/profile">
+				<label class="label" for={{nameInputEmail}}>
+					{{labelInputEmail}}
+					{{{inputEmail}}}
+					<small class="error"></small>
+				</label>
+				<small class="error"></small>
+				<label class="label" for={{nameInputLogin}}>
+					{{labelInputLogin}}
+					{{{inputLogin}}}
+					<small class="error"></small>
+				</label>
+				<label class="label" for={{nameInputFirstName}}>
+					{{labelInputFirstName}}
+					{{{inputFirstName}}}
+					<small class="error"></small>
+				</label>
+				<label class="label" for={{nameInputSecondName}}>
+					{{labelInputSecondName}}
+					{{{inputSecondName}}}
+					<small class="error"></small>
+				</label>
+				<label class="label" for={{nameInputdisplayName}}>
+					{{labelInputdisplayName}}
+					{{{inputDisplayName}}}
+					<small class="error"></small>
+				</label>
+				<label class="label last" for={{nameInputPhone}}>
+					{{labelInputPhone}}
+					{{{inputPhone}}}
+					<small class="error"></small>
+				</label>
 				<div class="wrap__btn">
 					<div class="btn_width">
 						{{{btnSave}}}

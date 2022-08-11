@@ -1,0 +1,10 @@
+.wrapper__loadAvatar {
+	.loadAvatar {
+		@extend %loadAvatar;	
+
+		.loadAvatar_change {
+			text-decoration: none;
+			color: $colorGrey;
+		}
+	}
+}

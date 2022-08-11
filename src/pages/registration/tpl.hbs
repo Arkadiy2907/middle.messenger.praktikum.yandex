@@ -1,8 +1,42 @@
 <div class="wrapper__registration">
 	<div class="registration">
-		<form id="registration__form" class="chat__form" name="registration__form" action="/choseChat">
-			<h2 class="title">{{title}}</h2>
-			{{{inputReg}}}
+		<form class="chat__form form" name="registration__form">
+			<h2 class="title">{{title}}</h2>			
+			<label class="label" for={{nameInputEmail}}>
+				{{labelInputEmail}}
+				{{{inputEmail}}}
+				<small class="error"></small>
+			</label>
+			<label class="label" for={{nameInputLogin}}>
+				{{labelInputLogin}}
+				{{{inputLogin}}}
+				<small class="error"></small>
+			</label>
+			<label class="label" for={{nameInputFirstName}}>
+				{{labelInputFirstName}}
+				{{{inputFirstName}}}
+				<small class="error"></small>
+			</label>
+			<label class="label" for={{nameInputSecondName}}>
+				{{labelInputSecondName}}
+				{{{inputSecondName}}}
+				<small class="error"></small>
+			</label>
+			<label class="label" for={{nameInputPhone}}>
+				{{labelInputPhone}}
+				{{{inputPhone}}}
+				<small class="error"></small>
+			</label>
+			<label class="label" for={{nameInputPassword}}>
+				{{labelInputPassword}}
+				{{{inputPassword}}}
+				<small class="error"></small>
+			</label>
+			<label class="label" for={{nameInputPasswordAgain}}>
+				{{labelInputPasswordAgain}}
+				{{{inputPasswordAgain}}}
+				<small class="error"></small>
+			</label>
 			{{{buttonBlue}}}
 		</form>
 		<div>

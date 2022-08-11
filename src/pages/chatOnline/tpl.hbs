@@ -9,24 +9,16 @@
 			</div>
 		</div>
 		<div class="searchChat">
-			<form id="searchChat__form" class="searchChat__form" name="searchChat_form" action="/searchChat">
+			<form class="searchChat__form" name="searchChat_form form" action="/searchChat">
 				<input type="text" id="search" class="search" name="search" placeholder="&#128269;&ensp;поиск">
 				{{{buttonBlue}}}
 			</form>
 		</div>
-		<ul class="chatsNow">
-			<li class="chat">
-				{{{chat1}}}
-			</li>
-			<li class="chat">
-				{{{chat2}}}
-			</li>
-			<li class="chat">
-				{{{chat3}}}
-			</li>
-			<li class="chat">
-				{{{chat4}}}
-			</li>
+		<ul class="chatsNow">			
+				{{{chat1}}}			
+				{{{chat2}}}			
+				{{{chat3}}}				
+				{{{chat4}}}		
 		</ul>
 	</div>
 	<div class="wrap__chatContent">
@@ -70,9 +62,9 @@
 			<div class="wrap__footer">
 				<div class="footer__contant">
 					<div class="added"><a href="#"><span>&#128206;</span></a></div>
-					<div class="inputMassage">
-						<input type="text" id="massage" class="massage" name="massage" placeholder="Сообщение">
-					</div>
+					<form class="inputMassage">
+						<input type="text" class="massage" name="massage" placeholder="Сообщение">
+					</form>
 					{{{sendMassge}}}
 				</div>
 			</div>
