@@ -17,12 +17,3 @@ npm run start — запуск express сервера на http://localhost:3000
 
 ссылка на deploy из Netlify
 https://yandex-praktikum-messenger-sprint1.netlify.app/
-======================================================================================
-
-sprint_2
-
-добавлено:
-TypeScript, Block, Event Bus, HTTPTransport (на базе XMLHttpRequest), ESLint
-
-по заполнению форм происходит их проверка при нажатии клавишь отправки, 
-сами данные есть в консоле, переход на др страницу произойдет через 4 сек 
