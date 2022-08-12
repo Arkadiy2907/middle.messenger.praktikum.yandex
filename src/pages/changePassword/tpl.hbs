@@ -3,8 +3,22 @@
 	<div class="content">
 		<div class="profile">
 			{{{avatarLog}}}
-			<form id="changePassword__form" class="profile__form" name="changePassword__form" action="/profile">
-				{{{profilePas}}}
+			<form class="profile__form form" name="changePassword__form">
+				<div class="form-control">
+					{{titleOldPassword}}
+					{{{inputOldPassword}}}
+					<small class="error"></small>
+				</div>
+				<div class="form-control">
+					{{titlePassword}}
+					{{{inputPassword}}}
+					<small class="error"></small>
+				</div>
+				<div class="form-control last">
+					{{titlePasswordAgain}}
+					{{{inputPasswordAgain}}}
+					<small class="error"></small>
+				</div>
 				<div class="wrap__btn">
 					<div class="btn_width">
 						{{{btnSaveCangePasword}}}
