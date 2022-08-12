@@ -1,0 +1,13 @@
+.wrapper__loadAvatar {
+	@include wrapper(center, center);
+
+	.loadAvatar {
+		@extend %loadAvatar;
+		
+		.loadAvatar_error {
+			color: $colorRed;
+			text-align: center;
+			font-size: 11px;
+		}
+	}
+}
