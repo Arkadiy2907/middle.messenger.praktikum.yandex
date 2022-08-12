@@ -1,20 +1,11 @@
 <div class="wrapper__index">
 	<div class="enterChat">
-		<form class="chat__form form">
-			<h1 class="title">{{title}}</h1>			
-				<label class="label" for={{nameInputLogin}}>
-					{{labelInputLogin}}
-					{{{inputLogin}}}
-					<small class="error"></small>
-				</label>			
-				<label class="label last" for={{nameInputPassword}}>
-					{{labelInputPassword}}
-					{{{inputPassword}}}
-					<small class="error"></small>
-				</label>
+		<form id="enterChat__form" class="chat__form" name="enterChat__form" action="/choseChat">
+			<h1 class="title">{{title}}</h1>
+			{{{inputIndex}}}
 			{{{buttonBlue}}}
 		</form>
-		<div class="toRegistration__form">
+		<div id="toRegistration__form" name="toRegistration__form">
 			{{{buttonText}}}
 		</div>
 	</div>

@@ -9,13 +9,15 @@
 			</div>
 		</div>
 		<div class="searchChat">
-			<form class="searchChat__form" name="searchChat_form form" action="/searchChat">
-				<input type="text" class="search" name="search" placeholder="&#128269;&ensp;поиск">
-				{{{buttonBlue}}}
+			<form id="searchChat__form" class="searchChat__form" name="searchChat_form" action="/searchChat">
+			<input type="text" id="search" class="search" name="search" placeholder="&#128269;&ensp;поиск">
+			{{{buttonBlue}}}
 			</form>
 		</div>
 		<ul class="chatsNow">
+			<li class="chat">
 			{{{chat1}}}
+			</li>
 		</ul>
 	</div>
 	<div class="wrap__chatContent">
@@ -34,8 +36,7 @@
 			</section>
 			<section class="massages">
 				<div class="massages__content">
-					<p class="content_text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam autem
-						rerum sint similique
+					<p class="content_text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam autem rerum sint similique
 						voluptatem iusto quidem aliquid, repellendus nihil, quibusdam sit omnis atque accusamus
 						maiores quia aspernatur numquam non repudiandae!</p>
 					<time class="time">11:00</time>
@@ -59,9 +60,9 @@
 			<div class="wrap__footer">
 				<div class="footer__contant">
 					<div class="added"><a href="#"><span>&#128206;</span></a></div>
-					<form class="inputMassage">
-						<input type="text" class="massage" name="massage" placeholder="Сообщение">
-					</form>
+					<div class="inputMassage">
+						<input type="text" id="massage" class="massage" name="massage" placeholder="Сообщение">
+					</div>
 					{{{sendMassge}}}
 				</div>
 			</div>
