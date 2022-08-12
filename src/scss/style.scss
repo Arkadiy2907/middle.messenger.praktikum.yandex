@@ -1,22 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600&family=Puppies+Play&display=swap");
-@import "./nullstyle";
-@import "./option";
-@import "../components/avatar/avatar";
-@import "../components/button/btnBlue";
-@import "../components/button/btnText";
-@import "../pages/index/index";
-@import "../pages/registration/registration";
-@import "../pages/chooseChat/choseChat";
-@import "../pages/searchChat/searchChat";
-@import "../pages/chatOnline/chatOnline";
-@import "../pages/fiveHundred/fiveHundred";
-@import "../pages/fourHundredFour/fourHundredFour";
-@import "../pages/profile/profile";
-@import "../pages/changeProfile/changeProfile";
-@import "../pages/changePassword/changePassword";
-@import "../components/loadAvatar/loadAvatar";
-@import "../pages/changeAvatar/fileOk/fileOkAvatar";
-@import "../components/blueCircle/sendMassage";
-@import "../components/blueCircle/arrow";
-@import "../components/blueCircle/newMassage";
-@import "../components/chat/chat"
+@import "./nullstyle.scss";
+@import "./option.scss";
+
+@import "../components/avatar/avatar.scss";
+@import "../components/button/btnBlue.scss";
+@import "../components/link/link.scss";
+
+@import "../components/btnSendMessage/sendMassage.scss";
+@import "../components/arrowPrevPage/arrow.scss";
+@import "../components/message/message.scss";
+
+@import "../pages/index/index.scss";
+@import "../pages/registration/registration.scss";
+
+@import "../pages/chooseChat/chooseChat.scss";
+@import "../pages/searchChat/searchChat.scss";
+@import "../pages/chatOnline/chatOnline.scss";
+
+@import "../pages/fiveHundred/fiveHundred.scss";
+@import "../pages/fourHundredFour/fourHundredFour.scss";
+
+@import "../pages/profile/profile.scss";
+@import "../pages/changeProfile/changeProfile.scss";
+@import "../pages/changePassword/changePassword.scss";
+
+@import "../pages/changeAvatar/loadAvatar/chooseFileAvatar.scss";
+@import "../pages/changeAvatar/fileError/errorFileAvatar.scss";
+@import "../pages/changeAvatar/fileOk/fileOkAvatar.scss";
+@import "../pages/changeAvatar/reloadFile/reloadFileAvatar.scss";
