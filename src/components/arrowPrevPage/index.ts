@@ -1,7 +1,7 @@
 import tpl from './tpl.hbs';
-import Block from '../../service/Block';
+import Block from '../../core/Block';
 
-interface ITemp {
+interface IArrowProps {
     value?: string;
     href: string;
     events?: {
@@ -10,7 +10,7 @@ interface ITemp {
 }
 
 export default class ArrowPrevPage extends Block {
-    constructor(props: ITemp) {
+    constructor(props: IArrowProps) {
         super('div', props);
     }
 

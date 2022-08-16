@@ -1,14 +1,14 @@
-import Block from '../../service/Block';
+import Block from '../../core/Block';
 import tpl from './tpl.hbs';
 import ArrowPrevPage from '../../components/arrowPrevPage';
 import Avatar from '../../components/avatar';
 import ButtonBlue from '../../components/button';
 import src from '../../image/cat.png';
 import Input from '../../components/input';
-import { propsInput } from '../../service/propsInput';
-import {
-    getResForm, inputIsNotValid, onBlur, onFocus, validMessage,
-} from '../../service/valid';
+import { propsInput } from '../../stubs/constantsForms';
+import { inputIsNotValid, validMessage } from '../../core/valid';
+import { eventFocus, eventBlur } from '../../utils/eventForms';
+import { goNextPage } from '../../utils/nextPage';
 
 export default class ChangePassword extends Block {
     constructor(props: Record<string, any> = {}) {
@@ -19,98 +19,73 @@ export default class ChangePassword extends Block {
 
         const inputOldPassword = new Input({
             ...oldPassword,
+            class: 'changePasswordOldPassword',
             events: {
                 blur: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    const { value } = target;
-
-                    onBlur({
-                        target,
-                        value,
-                        name: oldPassword.name,
-                    });
+                    eventBlur(e, oldPassword);
                 },
                 focus: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    onFocus({ target });
+                    eventFocus(e);
                 },
             },
         });
         const inputPassword = new Input({
             ...password,
+            class: 'changePasswordPassword',
             events: {
                 blur: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    const { value } = target;
-                    onBlur({
-                        target,
-                        value,
-                        name: password.name,
-                    });
+                    eventBlur(e, password);
                 },
                 focus: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    onFocus({ target });
+                    eventFocus(e);
                 },
             },
         });
 
         const inputPasswordAgain = new Input({
             ...passwordAgain,
+            class: 'changePasswordPasswordAgain',
             events: {
                 blur: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    const { value } = target;
-                    onBlur({
-                        target,
-                        value,
-                        name: passwordAgain.name,
-                    });
+                    eventBlur(e, passwordAgain);
                 },
                 focus: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    onFocus({ target });
+                    eventFocus(e);
                 },
             },
         });
         const btnSaveCangePasword = new ButtonBlue({
             value: 'Сохранить',
+            type: 'submit',
             events: {
                 click: (e) => {
                     e.preventDefault();
-                    const formElement = document.querySelector('form') as HTMLFormElement;
-                    const inputs = formElement.querySelectorAll('input');
-                    const inputOldPasswordTarget = inputs[0];
-                    const inputPasswordTarget = inputs[1];
-                    const inputPasswordAgainTarget = inputs[2];
+                    const inputOldPasswordTarget = document.querySelector<HTMLInputElement>('.changePasswordOldPassword');
+                    const inputPasswordTarget = document.querySelector<HTMLInputElement>('.changePasswordPassword');
+                    const inputPasswordAgainTarget = document.querySelector<HTMLInputElement>('.changePasswordPasswordAgain');
 
                     inputIsNotValid({
                         input: validMessage.oldPassword,
-                        target: inputOldPasswordTarget,
-                        value: inputOldPasswordTarget.value,
+                        target: inputOldPasswordTarget!,
+                        value: inputOldPasswordTarget!.value,
                         message: validMessage.oldPassword.message,
                     });
 
                     inputIsNotValid({
                         input: validMessage.password,
-                        target: inputPasswordTarget,
-                        value: inputPasswordTarget.value,
+                        target: inputPasswordTarget!,
+                        value: inputPasswordTarget!.value,
                         message: validMessage.password.message,
                     });
 
                     inputIsNotValid({
                         input: validMessage.passwordAgain,
-                        target: inputPasswordAgainTarget,
-                        value: inputPasswordAgainTarget.value,
+                        target: inputPasswordAgainTarget!,
+                        value: inputPasswordAgainTarget!.value,
                         message: validMessage.passwordAgain.message,
                     });
 
-                    const obj = getResForm('form');
-                    console.log('после запол-я в течении 4 сек произойтет перенаправление на след страницу');
-                    const nextPage = () => {
-                        if (obj) window.location.href = '/profile';
-                    };
-                    setTimeout(nextPage, 4000);
+                    goNextPage('/profile');
                 },
             },
         });

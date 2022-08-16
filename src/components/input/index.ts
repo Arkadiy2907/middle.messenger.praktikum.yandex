@@ -1,19 +1,20 @@
 import tpl from './tpl.hbs';
-import Block from '../../service/Block';
+import Block from '../../core/Block';
 
-interface ITempProps {
+interface IInputProps {
     name: string;
     label: string;
     type: string;
     placeholder?: string;
     readonly?: string;
+    class?: string;
     events?: {
-        blur: (event: Event) => void;
-        focus: (event: Event) => void;
+        blur: (event: InputEvent) => void;
+        focus: (event: InputEvent) => void;
     };
 }
 class Input extends Block {
-    constructor(props: ITempProps) {
+    constructor(props: IInputProps) {
         super('div', props);
     }
 

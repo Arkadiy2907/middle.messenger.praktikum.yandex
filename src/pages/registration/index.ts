@@ -1,12 +1,12 @@
-import Block from '../../service/Block';
+import Block from '../../core/Block';
 import tpl from './tpl.hbs';
 import Link from '../../components/link';
 import ButtonBlue from '../../components/button';
 import Input from '../../components/input/index';
-import { propsInput } from '../../service/propsInput';
-import {
-    getResForm, inputIsNotValid, onBlur, onFocus, validMessage,
-} from '../../service/valid';
+import { propsInput } from '../../stubs/constantsForms';
+import { inputIsNotValid, validMessage } from '../../core/valid';
+import { eventFocus, eventBlur } from '../../utils/eventForms';
+import { goNextPage } from '../../utils/nextPage';
 
 export default class Registration extends Block {
     constructor(props: Record<string, any> = {}) {
@@ -18,209 +18,159 @@ export default class Registration extends Block {
 
         const inputEmail = new Input({
             ...email,
+            class: 'registrationEmail',
             events: {
                 blur: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    const { value } = target;
-                    onBlur({
-                        target,
-                        value,
-                        name: email.name,
-                    });
+                    eventBlur(e, email);
                 },
                 focus: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    onFocus({ target });
+                    eventFocus(e);
                 },
             },
         });
 
         const inputLogin = new Input({
             ...login,
+            class: 'registrationLogin',
             events: {
                 blur: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    const { value } = target;
-                    onBlur({
-                        target,
-                        value,
-                        name: login.name,
-                    });
+                    eventBlur(e, login);
                 },
                 focus: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    onFocus({ target });
+                    eventFocus(e);
                 },
             },
         });
 
         const inputFirstName = new Input({
             ...firstName,
+            class: 'registrationFirstName',
             events: {
                 blur: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    const { value } = target;
-                    onBlur({
-                        target,
-                        value,
-                        name: firstName.name,
-                    });
+                    eventBlur(e, firstName);
                 },
                 focus: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    onFocus({ target });
+                    eventFocus(e);
                 },
             },
         });
 
         const inputSecondName = new Input({
             ...secondName,
+            class: 'registrationSecondName',
             events: {
                 blur: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    const { value } = target;
-                    onBlur({
-                        target,
-                        value,
-                        name: secondName.name,
-                    });
+                    eventBlur(e, secondName);
                 },
                 focus: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    onFocus({ target });
+                    eventFocus(e);
                 },
             },
         });
 
         const inputPhone = new Input({
             ...phone,
+            class: 'registrationPhone',
             events: {
                 blur: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    const { value } = target;
-                    onBlur({
-                        target,
-                        value,
-                        name: phone.name,
-                    });
+                    eventBlur(e, phone);
                 },
                 focus: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    onFocus({ target });
+                    eventFocus(e);
                 },
             },
         });
 
         const inputPassword = new Input({
             ...password,
+            class: 'registrationPassword',
             events: {
                 blur: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    const { value } = target;
-                    onBlur({
-                        target,
-                        value,
-                        name: password.name,
-                    });
+                    eventBlur(e, password);
                 },
                 focus: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    onFocus({ target });
+                    eventFocus(e);
                 },
             },
         });
 
         const inputPasswordAgain = new Input({
             ...passwordAgain,
+            class: 'registrationPasswordAgain',
             events: {
                 blur: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    const { value } = target;
-                    onBlur({
-                        target,
-                        value,
-                        name: passwordAgain.name,
-                    });
+                    eventBlur(e, passwordAgain);
                 },
                 focus: (e) => {
-                    const target = e.target as HTMLInputElement;
-                    onFocus({ target });
+                    eventFocus(e);
                 },
             },
         });
 
         const buttonBlue = new ButtonBlue({
             value: 'Зарегистрироваться',
+            type: 'submit',
             events: {
                 click: (e) => {
                     e.preventDefault();
-                    const formElement = document.querySelector('form') as HTMLFormElement;
-                    const inputs = formElement.querySelectorAll('input');
-                    const inputEmailTarget = inputs[0];
-                    const inputLoginTarget = inputs[1];
-                    const inputFirstNameTarget = inputs[2];
-                    const inputSecondNameTarget = inputs[3];
-                    const inputPhoneTarget = inputs[4];
-                    const inputPasswordTarget = inputs[5];
-                    const inputPasswordAgainTarget = inputs[6];
+                    const inputEmailTarget = document.querySelector<HTMLInputElement>('.registrationEmail');
+                    const inputLoginTarget = document.querySelector<HTMLInputElement>('.registrationLogin');
+                    const inputFirstNameTarget = document.querySelector<HTMLInputElement>('.registrationFirstName');
+                    const inputSecondNameTarget = document.querySelector<HTMLInputElement>('.registrationSecondName');
+                    const inputPhoneTarget = document.querySelector<HTMLInputElement>('.registrationPhone');
+                    const inputPasswordTarget = document.querySelector<HTMLInputElement>('.registrationPassword');
+                    const inputPasswordAgainTarget = document.querySelector<HTMLInputElement>('.registrationPasswordAgain');
 
                     inputIsNotValid({
                         input: validMessage.email,
-                        target: inputEmailTarget,
-                        value: inputEmailTarget.value,
+                        target: inputEmailTarget!,
+                        value: inputEmailTarget!.value,
                         message: validMessage.email.message,
                     });
 
                     inputIsNotValid({
                         input: validMessage.login,
-                        target: inputLoginTarget,
-                        value: inputLoginTarget.value,
+                        target: inputLoginTarget!,
+                        value: inputLoginTarget!.value,
                         message: validMessage.login.message,
                     });
 
                     inputIsNotValid({
                         input: validMessage.firstName,
-                        target: inputFirstNameTarget,
-                        value: inputFirstNameTarget.value,
+                        target: inputFirstNameTarget!,
+                        value: inputFirstNameTarget!.value,
                         message: validMessage.firstName.message,
                     });
 
                     inputIsNotValid({
                         input: validMessage.secondName,
-                        target: inputSecondNameTarget,
-                        value: inputSecondNameTarget.value,
+                        target: inputSecondNameTarget!,
+                        value: inputSecondNameTarget!.value,
                         message: validMessage.secondName.message,
                     });
 
                     inputIsNotValid({
                         input: validMessage.phone,
-                        target: inputPhoneTarget,
-                        value: inputPhoneTarget.value,
+                        target: inputPhoneTarget!,
+                        value: inputPhoneTarget!.value,
                         message: validMessage.phone.message,
                     });
 
                     inputIsNotValid({
                         input: validMessage.password,
-                        target: inputPasswordTarget,
-                        value: inputPasswordTarget.value,
+                        target: inputPasswordTarget!,
+                        value: inputPasswordTarget!.value,
                         message: validMessage.password.message,
                     });
 
                     inputIsNotValid({
                         input: validMessage.passwordAgain,
-                        target: inputPasswordAgainTarget,
-                        value: inputPasswordAgainTarget.value,
+                        target: inputPasswordAgainTarget!,
+                        value: inputPasswordAgainTarget!.value,
                         message: validMessage.passwordAgain.message,
                     });
 
-                    const obj = getResForm('form');
-                    console.log('после запол-я логина в течении 4 сек произойтет перенаправление на след страницу');
-                    const nextPage = () => {
-                        if (obj.login) {
-                            window.location.href = '/chooseChat';
-                        }
-                    };
-                    setTimeout(nextPage, 4000);
+                    goNextPage('/chooseChat');
                 },
             },
         });

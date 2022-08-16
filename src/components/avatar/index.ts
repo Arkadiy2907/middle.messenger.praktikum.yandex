@@ -1,7 +1,7 @@
 import tpl from './tpl.hbs';
-import Block from '../../service/Block';
+import Block from '../../core/Block';
 
-interface ITemp {
+interface IAvatarProps {
     displayName: string;
     href: string;
     src?: string;
@@ -11,7 +11,7 @@ interface ITemp {
 }
 
 export default class Avatar extends Block {
-    constructor(props: ITemp) {
+    constructor(props: IAvatarProps) {
         super('div', props);
     }
 

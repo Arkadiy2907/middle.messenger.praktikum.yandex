@@ -1,11 +1,15 @@
 import tpl from './tpl.hbs';
-import Block from '../../service/Block';
+import Block from '../../core/Block';
 import ButtonBlue from '../../components/button';
-import BtnSendMassage from '../../components/btnSendMessage';
+import BtnSendMessage from '../../components/btnSendMessage';
 import Link from '../../components/link';
-import Massage from '../../components/message';
-import { getResForm } from '../../service/valid';
+import Message from '../../components/message';
+import { getResForm } from '../../core/valid';
 import src from '../../image/78.png';
+import { goNextPage } from '../../utils/nextPage';
+import { getDate } from '../../utils/getDate';
+
+const today = new Date();
 
 export default class ChatOnline extends Block {
     constructor(props: Record<string, any> = {}) {
@@ -16,56 +20,52 @@ export default class ChatOnline extends Block {
             events: {
                 click: (event) => {
                     event.preventDefault();
-                    const obj = getResForm('form');
-                    console.log('после ввода формы в течении 4 сек произойтет перенаправление на след страницу');
-                    const nextPage = () => {
-                        if (obj) window.location.href = '/searchChat';
-                    };
-                    setTimeout(nextPage, 4000);
+
+                    goNextPage('/searchChat');
                 },
             },
         });
 
-        const sendMassge = new BtnSendMassage({
+        const sendMessge = new BtnSendMessage({
             events: {
                 click: (event) => {
                     event.preventDefault();
 
-                    const obj = getResForm('.inputMassage');
+                    const obj = getResForm('.inputMessage');
                     if (obj) console.log('пока нет сообщения кина не будет! И сообщение как бы не уйдет');
                 },
             },
         });
 
-        const chat1 = new Massage({
+        const chat1 = new Message({
             chatTitle: 'Chat Online!',
             href: '/chatOnline',
-            myMassage: 'upss',
-            chatMassage:
+            myMessage: 'upss',
+            chatMessage:
                 'Lorem ipsum, dolor sit amet consectetur adipisicing elit Lorem ipsum, dolor sit amet consectetur adipisicing elit',
-            time: '11:05',
+            time: getDate(today),
         });
-        const chat2 = new Massage({
+        const chat2 = new Message({
             chatTitle: '500!',
             href: '/fiveHundred',
-            myMassage: '',
-            chatMassage: 'Five Hundred! 500!',
-            time: '11:00',
+            myMessage: '',
+            chatMessage: 'Five Hundred! 500!',
+            time: getDate(today),
         });
-        const chat3 = new Massage({
+        const chat3 = new Message({
             chatTitle: '404!',
             href: '/fourHundredFour',
-            myMassage: '',
-            chatMassage: ' 404! Lorem ipsum, dolor sit amet consectetur adipisicing ',
-            time: '11:00',
+            myMessage: '',
+            chatMessage: ' 404! Lorem ipsum, dolor sit amet consectetur adipisicing ',
+            time: getDate(today),
         });
 
-        const chat4 = new Massage({
+        const chat4 = new Message({
             chatTitle: 'Choose chat!',
             href: '/chooseChat',
-            myMassage: '',
-            chatMassage: 'no chat!',
-            time: '03:00',
+            myMessage: '',
+            chatMessage: 'no chat!',
+            time: getDate(today),
         });
 
         super('div', {
@@ -73,7 +73,7 @@ export default class ChatOnline extends Block {
             signOut,
             inProfile,
             buttonBlue,
-            sendMassge,
+            sendMessge,
             chat1,
             chat2,
             chat3,

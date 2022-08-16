@@ -48,12 +48,12 @@
 				}
 			}
 
-			.massages {
+			.messages {
 				@extend %wrapConentChatsOtherUser;
 			}
 
-			.my__massages {
-				@extend %myMassages;
+			.my__messages {
+				@extend %myMessages;
 			}
 
 			.wrap__footer {

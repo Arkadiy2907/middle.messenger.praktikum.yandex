@@ -1,4 +1,4 @@
-import renderDom from './service/renderDOM';
+import renderDom from './core/renderDOM';
 import Index from './pages/index/index';
 import FourHundredFour from './pages/fourHundredFour';
 import FiveHundred from './pages/fiveHundred';

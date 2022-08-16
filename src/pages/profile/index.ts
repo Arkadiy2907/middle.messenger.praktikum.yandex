@@ -1,10 +1,10 @@
 import tpl from './tpl.hbs';
-import Block from '../../service/Block';
+import Block from '../../core/Block';
 import ArrowPrevPage from '../../components/arrowPrevPage';
 import Link from '../../components/link';
 import Avatar from '../../components/avatar';
 import Input from '../../components/input';
-import { propsInput } from '../../service/propsInput';
+import { propsInput } from '../../stubs/constantsForms';
 import src from '../../image/cat.png';
 
 export default class Profile extends Block {

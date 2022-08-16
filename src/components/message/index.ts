@@ -1,19 +1,19 @@
 import tpl from './tpl.hbs';
-import Block from '../../service/Block';
+import Block from '../../core/Block';
 
-interface ITempMassage {
+interface IMessagekProps {
     chatTitle: string;
     href: string;
-    myMassage?: string;
-    chatMassage: string;
-    time: string;
+    myMessage?: string;
+    chatMessage: string;
+	time?: string;
     events?: {
         click: (event: Event) => void;
     };
 }
 
-export default class Massage extends Block {
-    constructor(props: ITempMassage) {
+export default class Message extends Block {
+    constructor(props: IMessagekProps) {
         super('div', props);
     }
 

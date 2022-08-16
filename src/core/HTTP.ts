@@ -1,13 +1,13 @@
-type TDataHttp = Record<string, any>;
+type Methods = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
-const METHODS = {
-    GET: 'GET',
-    POST: 'POST',
-    PUT: 'PUT',
-    DELETE: 'DELETE',
+type TOptions = {
+    headers: Record<string, string>;
+    method: Methods;
+    data: Record<string, unknown>;
+    timeout?: number;
 };
 
-function queryStringify(data: TDataHttp) {
+function queryStringify(data: Record<string, any>) {
     if (typeof data !== 'object') {
         throw new Error('Data must be object');
     }
@@ -17,22 +17,22 @@ function queryStringify(data: TDataHttp) {
 }
 
 class Client {
-    get = (url: string, options: TDataHttp = {}) => this.request(url, { ...options, method: METHODS.GET }, options.timeout);
+    get = (url: string, options: TOptions) => this.request(url, { ...options, method: 'GET' }, options.timeout);
 
-    post = (url: string, options: TDataHttp = {}) => this.request(url, { ...options, method: METHODS.POST }, options.timeout);
+    post = (url: string, options: TOptions) => this.request(url, { ...options, method: 'POST' }, options.timeout);
 
-    put = (url: string, options: TDataHttp = {}) => this.request(url, { ...options, method: METHODS.PUT }, options.timeout);
+    put = (url: string, options: TOptions) => this.request(url, { ...options, method: 'PUT' }, options.timeout);
 
-    delete = (url: string, options: TDataHttp = {}) => this.request(
+    delete = (url: string, options: TOptions) => this.request(
         url,
         {
             ...options,
-            method: METHODS.DELETE,
+            method: 'DELETE',
         },
         options.timeout,
     );
 
-    request = (url: string, options: TDataHttp = {}, timeout = 5000) => {
+    request = (url: string, options: TOptions, time = 5000) => {
         const { headers = {}, method, data } = options;
 
         return new Promise((resolve, reject) => {
@@ -42,9 +42,9 @@ class Client {
             }
 
             const xhr = new XMLHttpRequest();
-            const isGet = method === METHODS.GET;
+            const isGet = method === 'GET';
 
-            xhr.open(method, isGet && !!data ? `${url}${queryStringify(data)}` : url);
+            xhr.open(method, isGet && !!data ? `${url}${queryStringify(data as any)}` : url);
 
             Object.keys(headers).forEach((key) => {
                 xhr.setRequestHeader(key, headers[key]);
@@ -57,13 +57,13 @@ class Client {
             xhr.onabort = reject;
             xhr.onerror = reject;
 
-            xhr.timeout = timeout;
+            xhr.timeout = time;
             xhr.ontimeout = reject;
 
             if (isGet || !data) {
                 xhr.send();
             } else {
-                xhr.send(data);
+                xhr.send(data as any);
             }
         });
     };

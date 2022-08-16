@@ -1,5 +1,5 @@
 import tpl from './tpl.hbs';
-import Block from '../../../service/Block';
+import Block from '../../../core/Block';
 import Link from '../../../components/link';
 import ButtonBlue from '../../../components/button';
 

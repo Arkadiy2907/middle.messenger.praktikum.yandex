@@ -1,7 +1,7 @@
 import tpl from './tpl.hbs';
-import Block from '../../service/Block';
+import Block from '../../core/Block';
 
-interface ITemp {
+interface ILinkProps {
     value: string;
     href: string;
     events?: {
@@ -10,7 +10,7 @@ interface ITemp {
 }
 
 export default class Link extends Block {
-    constructor(props: ITemp) {
+    constructor(props: ILinkProps) {
         super('div', props);
     }
 

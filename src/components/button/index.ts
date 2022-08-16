@@ -1,16 +1,17 @@
 import tpl from './tpl.hbs';
-import Block from '../../service/Block';
+import Block from '../../core/Block';
 
-interface ITemp {
+interface IButtonBlueProps {
     value: string;
     href?: string;
+    type?: string;
     events?: {
         click: (event: Event) => void;
     };
 }
 
 export default class ButtonBlue extends Block {
-    constructor(props: ITemp) {
+    constructor(props: IButtonBlueProps) {
         super('div', props);
     }
 

@@ -1,4 +1,5 @@
-import { propsInput, regExp, errorMessage } from './propsInput';
+import { regExp, errorMessage } from '../utils/forRegExp';
+import { propsInput } from '../stubs/constantsForms';
 
 interface IValidMessage {
     message: string;
@@ -25,8 +26,8 @@ interface ITarget {
 
 export const getResForm = (form: string) => {
     const dataObject: Record<string, any> = {};
-    const formElement = document.querySelector(form) as HTMLFormElement;
-    const formData = new FormData(formElement);
+    const formElement = document.querySelector<HTMLFormElement>(form);
+    const formData = new FormData(formElement!);
     console.log(formData);
     for (const [name, value] of formData) {
         dataObject[name] = value;
@@ -37,7 +38,7 @@ export const getResForm = (form: string) => {
 };
 
 export const removeErrorMessage = (target: any) => {
-    const error = target.parentNode.children[1];
+    const error = target.nextElementSibling;
     error.style.visibility = 'hidden';
     error.textContent = '';
 };

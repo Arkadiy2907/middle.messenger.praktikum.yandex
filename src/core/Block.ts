@@ -1,12 +1,8 @@
-const { v4: uuidv4 } = require('https://jspm.dev/uuid');
 import EventBus from './EventBus';
 
-const enum Events {
-    INIT = 'init',
-    FLOW_CDM = 'flow:component-did-mount',
-    FLOW_CDU = 'flow:component-did-update',
-    FLOW_RENDER = 'flow:render',
-}
+const { v4: uuidv4 } = require('/node_modules/uuid/dist/index');
+
+type Events = 'init' | 'flow:component-did-mount' | 'flow:component-did-update' | 'flow:render';
 
 type TProps = Record<string, any>;
 
@@ -32,14 +28,14 @@ export default class Block {
         this.props = this._makePropsProxy({ ...props, id: this.id });
         this.tagName = tagName;
         this._registerEvents(eventBus);
-        eventBus.emit(Events.INIT);
+        eventBus.emit('init');
     }
 
     private _registerEvents(eventBus: any) {
-        eventBus.on(Events.INIT, this.init.bind(this));
-        eventBus.on(Events.FLOW_CDM, this._componentDidMount.bind(this));
-        eventBus.on(Events.FLOW_CDU, this._componentDidUpdate.bind(this));
-        eventBus.on(Events.FLOW_RENDER, this._render.bind(this));
+        eventBus.on('init', this.init.bind(this));
+        eventBus.on('flow:component-did-mount', this._componentDidMount.bind(this));
+        eventBus.on('flow:component-did-update', this._componentDidUpdate.bind(this));
+        eventBus.on('flow:render', this._render.bind(this));
     }
 
     private _createResources() {
@@ -48,7 +44,7 @@ export default class Block {
 
     init() {
         this._createResources();
-        this.eventBus().emit(Events.FLOW_RENDER);
+        this.eventBus().emit('flow:render');
     }
 
     private _componentDidMount(oldProps: TProps) {
@@ -61,7 +57,7 @@ export default class Block {
     componentDidMount(_oldProps: TProps) {}
 
     dispatchComponentDidMount() {
-        this.eventBus().emit(Events.FLOW_CDM);
+        this.eventBus().emit('flow:component-did-mount');
     }
 
     private _componentDidUpdate(oldProps: TProps, newProps: TProps) {
@@ -124,7 +120,7 @@ export default class Block {
                     throw new Error('нет доступа');
                 } else {
                     target[prop] = value;
-                    this.eventBus().emit(Events.FLOW_CDU, target);
+                    this.eventBus().emit('flow:component-did-update', target);
                     return true;
                 }
             },
