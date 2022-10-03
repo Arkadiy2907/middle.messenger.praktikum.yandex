@@ -1,19 +1,24 @@
 import tpl from './tpl.hbs';
 import Block from '../../core/Block';
 
-interface IMessagekProps {
-    chatTitle: string;
-    href: string;
+interface IMessageProps {
+    avatar?: string;
+    title?: string;
+    href?: string;
     myMessage?: string;
-    chatMessage: string;
-	time?: string;
+    created_by?: number;
+    last_message?: Record<string, any>;
+    time?: Date;
+    id: number;
+    unread_count?: number;
+    click?: () => Promise<void>;
     events?: {
-        click: (event: Event) => void;
+        click: () => void;
     };
 }
 
 export default class Message extends Block {
-    constructor(props: IMessagekProps) {
+    constructor(props: IMessageProps) {
         super('div', props);
     }
 

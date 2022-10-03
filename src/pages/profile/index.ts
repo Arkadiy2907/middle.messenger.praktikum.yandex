@@ -5,46 +5,96 @@ import Link from '../../components/link';
 import Avatar from '../../components/avatar';
 import Input from '../../components/input';
 import { propsInput } from '../../stubs/constantsForms';
-import src from '../../image/cat.png';
+import startPic from '../../image/cat.png';
+import { router } from '../..';
+import authController from '../../controllers/authController';
+import { getAvatar, getUserData } from '../../utils/getUserData';
 
 export default class Profile extends Block {
     constructor(props: Record<string, any> = {}) {
-        const prevArrow = new ArrowPrevPage({ href: '/chooseChat' });
-        const changeProfileBtn = new Link({ value: 'Изменить данные', href: '/changeProfile' });
-        const changePasswordBtn = new Link({ value: 'Изменить пароль', href: '/changePassword' });
-        const buttonTextOut = new Link({ value: 'Ввыход из профиля', href: '/' });
-        const avatarLog = new Avatar({ displayName: 'Иван', href: '/loadAvatar', src: `${src}` });
+        const prevArrow = new ArrowPrevPage({
+            events: {
+                click: (event) => {
+                    event.preventDefault();
+                    router.go('/chooseChat');
+                },
+            },
+        });
+        const changeProfileBtn = new Link({
+            value: 'Изменить данные',
+            events: {
+                click: (event) => {
+                    event.preventDefault();
+                    router.go('/changeProfile');
+                },
+            },
+        });
+        const changePasswordBtn = new Link({
+            value: 'Изменить пароль',
+            events: {
+                click: (event) => {
+                    event.preventDefault();
+                    router.go('/changePassword');
+                },
+            },
+        });
+        const buttonTextOut = new Link({
+            value: 'Выход из профиля',
+            events: {
+                click: (e) => {
+                    e.preventDefault();
+                    authController.logOut();
+                    router.go('/');
+                },
+            },
+        });
+
+        const currentUser = getUserData() || {};
+        const avatarIcon = getAvatar();
+
+        const avatarLog = new Avatar({
+            displayName: `${currentUser?.login}`,
+            src: avatarIcon || startPic,
+        });
+
         const {
             email, login, firstName, secondName, phone, displayName,
         } = propsInput;
+
         const inputEmail = new Input({
             ...email,
             readonly: 'readonly',
+            value: currentUser?.email,
         });
 
         const inputLogin = new Input({
             ...login,
             readonly: 'readonly',
+            value: currentUser?.login,
         });
 
         const inputFirstName = new Input({
             ...firstName,
             readonly: 'readonly',
+            value: currentUser?.first_name,
         });
 
         const inputSecondName = new Input({
             ...secondName,
             readonly: 'readonly',
+            value: currentUser?.second_name,
         });
 
         const inputDisplayName = new Input({
             ...displayName,
             readonly: 'readonly',
+            value: currentUser?.display_name,
         });
 
         const inputPhone = new Input({
             ...phone,
             readonly: 'readonly',
+            value: currentUser?.phone,
         });
 
         const forTitle = {

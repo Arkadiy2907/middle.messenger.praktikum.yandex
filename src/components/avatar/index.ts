@@ -3,7 +3,6 @@ import Block from '../../core/Block';
 
 interface IAvatarProps {
     displayName: string;
-    href: string;
     src?: string;
     events?: {
         click: (event: Event) => void;

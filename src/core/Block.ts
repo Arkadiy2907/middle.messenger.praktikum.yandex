@@ -50,11 +50,17 @@ export default class Block {
     private _componentDidMount(oldProps: TProps) {
         this.componentDidMount(oldProps);
         Object.values(this.children).forEach((child) => {
-            child.dispatchComponentDidMount();
+            if (Array.isArray(child)) {
+                child.forEach((item) => {
+                    item.dispatchComponentDidMount();
+                });
+            } else {
+                child.dispatchComponentDidMount();
+            }
         });
     }
 
-    componentDidMount(_oldProps: TProps) {}
+    componentDidMount(_oldProps: TProps) { }
 
     dispatchComponentDidMount() {
         this.eventBus().emit('flow:component-did-mount');
@@ -77,6 +83,8 @@ export default class Block {
             return;
         }
 
+        const { children, props } = this._getChildren(nextProps);
+        Object.assign(this.children, children);
         Object.assign(this.props, nextProps);
     };
 
@@ -145,6 +153,10 @@ export default class Block {
         this.getContent().style.display = 'none';
     }
 
+    remove() {
+        this.getContent().remove();
+    }
+
     private _addEventListeners() {
         const { events = {} } = this.props;
 
@@ -168,6 +180,13 @@ export default class Block {
         Object.entries(propsAndChildren).forEach(([key, value]) => {
             if (value instanceof Block) {
                 children[key] = value;
+            } else if (Array.isArray(value) && value[0] instanceof Block) {
+                value.forEach((item, index) => {
+                    if (!children[key]) {
+                        children[key] = [];
+                    }
+                    children[key][index] = item;
+                });
             } else {
                 props[key] = value;
             }
@@ -179,14 +198,33 @@ export default class Block {
     compile(template: any, props: any) {
         const propsAndStubs = { ...props };
         Object.entries(this.children).forEach(([key, child]) => {
-            propsAndStubs[key] = `<div data-id="${child.id}"></div>`;
+            if (Array.isArray(child)) {
+                propsAndStubs[key] = [];
+                child.forEach((item) => {
+                    propsAndStubs[key].push({
+                        [key]: `<div data-id="${item.id}"></div>`,
+                    });
+                });
+            } else {
+                propsAndStubs[key] = `<div data-id="${child.id}"></div>`;
+            }
         });
 
-        const fragment = this._createDocumentElement('template') as HTMLTemplateElement;
+        const fragment = this._createDocumentElement(
+            'template',
+        ) as HTMLTemplateElement;
         fragment.innerHTML = template(propsAndStubs);
         Object.values(this.children).forEach((child) => {
-            const stub = fragment.content.querySelector(`[data-id="${child.id}"]`);
-            if (stub) stub.replaceWith(child.getContent());
+            if (Array.isArray(child)) {
+                child.forEach((item) => {
+                    const stub = fragment.content.querySelector(`[data-id="${item.id}"]`);
+
+                    if (stub) stub.replaceWith(item.getContent());
+                });
+            } else {
+                const stub = fragment.content.querySelector(`[data-id="${child.id}"]`);
+                if (stub) stub.replaceWith(child.getContent());
+            }
         });
 
         return fragment.content;

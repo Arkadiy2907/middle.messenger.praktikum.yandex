@@ -3,7 +3,7 @@ import Block from '../../core/Block';
 
 interface ILinkProps {
     value: string;
-    href: string;
+    href?: string;
     events?: {
         click: (event: Event) => void;
     };

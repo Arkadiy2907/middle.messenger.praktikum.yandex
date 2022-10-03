@@ -3,11 +3,12 @@ import Block from '../../core/Block';
 
 interface IInputProps {
     name: string;
-    label: string;
+    label?: string;
     type: string;
     placeholder?: string;
     readonly?: string;
-    class?: string;
+	class?: string;
+	value?: string;
     events?: {
         blur: (event: InputEvent) => void;
         focus: (event: InputEvent) => void;

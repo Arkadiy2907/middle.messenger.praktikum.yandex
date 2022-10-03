@@ -4,6 +4,7 @@ export const propsInput = {
         name: 'login',
         type: 'text',
         placeholder: 'Ivan',
+        value: '',
     },
 
     firstName: {
@@ -11,6 +12,7 @@ export const propsInput = {
         name: 'firstName',
         type: 'text',
         placeholder: 'Иван',
+        value: '',
     },
 
     secondName: {
@@ -18,6 +20,7 @@ export const propsInput = {
         name: 'secondName',
         type: 'text',
         placeholder: 'Иванов',
+        value: '',
     },
 
     password: {
@@ -25,6 +28,7 @@ export const propsInput = {
         name: 'password',
         type: 'password',
         placeholder: 'пароль',
+        value: '',
     },
 
     passwordAgain: {
@@ -32,6 +36,7 @@ export const propsInput = {
         name: 'passwordAgain',
         type: 'password',
         placeholder: 'пароль',
+        value: '',
     },
 
     oldPassword: {
@@ -39,6 +44,7 @@ export const propsInput = {
         name: 'oldPassword',
         type: 'password',
         placeholder: 'пароль',
+        value: '',
     },
 
     email: {
@@ -46,6 +52,7 @@ export const propsInput = {
         name: 'email',
         type: 'email',
         placeholder: 'hello.@ivan.com',
+        value: '',
     },
 
     phone: {
@@ -53,12 +60,14 @@ export const propsInput = {
         name: 'phone',
         type: 'tel',
         placeholder: '+78001002030',
+        value: '',
     },
 
     displayName: {
         label: 'Имя в чате',
         name: 'displayName',
         type: 'text',
-        placeholder: 'Ivan',
+        placeholder: 'как и логин',
+        value: '',
     },
 };
