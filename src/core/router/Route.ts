@@ -1,4 +1,4 @@
-import renderDom from '../renderDom';
+import renderDom from '../renderDOM';
 import { isEqualString } from '../../utils/isEqualString';
 
 export class Route {
