@@ -6,12 +6,12 @@ type Events = 'init' | 'flow:component-did-mount' | 'flow:component-did-update' 
 
 type TProps = Record<string, any>;
 
-export default class Block {
+export default class Block<Props extends Record<string, any> = any> {
     eventBus: () => EventBus;
 
     tagName: string;
 
-    props: Record<string, any>;
+    props: Props;
 
     private _element: HTMLElement;
 
@@ -219,11 +219,15 @@ export default class Block {
                 child.forEach((item) => {
                     const stub = fragment.content.querySelector(`[data-id="${item.id}"]`);
 
-                    if (stub) stub.replaceWith(item.getContent());
+                    if (stub) {
+                        stub.replaceWith(item.getContent());
+                    }
                 });
             } else {
                 const stub = fragment.content.querySelector(`[data-id="${child.id}"]`);
-                if (stub) stub.replaceWith(child.getContent());
+                if (stub) {
+                    stub.replaceWith(child.getContent());
+                }
             }
         });
 

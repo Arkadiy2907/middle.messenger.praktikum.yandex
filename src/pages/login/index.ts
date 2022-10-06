@@ -1,13 +1,13 @@
 import Block from '../../core/Block';
+import { router } from '../..';
+import authController from '../../controllers/authController';
+import { inputIsNotValid, validMessage, getResForm } from '../../core/valid';
+import { eventFocus, eventBlur } from '../../utils/eventForms';
 import { propsInput } from '../../stubs/constantsForms';
-import tpl from './tpl.hbs';
 import ButtonBlue from '../../components/button';
 import Link from '../../components/link';
 import Input from '../../components/input/index';
-import { inputIsNotValid, validMessage, getResForm } from '../../core/valid';
-import { eventFocus, eventBlur } from '../../utils/eventForms';
-import { router } from '../..';
-import authController from '../../controllers/authController';
+import tpl from './tpl.hbs';
 
 export type TLogin = {
     login: string;
@@ -15,7 +15,7 @@ export type TLogin = {
 };
 
 export default class Login extends Block {
-    constructor(props: Record<string, any>) {
+    public constructor(props: Record<string, any>) {
         const { login, password } = propsInput;
         const buttonText = new Link({
             value: 'Нет аккаунта?',
@@ -86,7 +86,7 @@ export default class Login extends Block {
                             if (result?.success) {
                                 router.go('/chooseChat');
                             } else {
-                                router.go('/fourHundredFour');
+                                router.go('/warning');
                             }
                         });
                     }

@@ -9,15 +9,15 @@ type TPassword = {
 const _http = new Client('/user');
 
 class UserApi {
-    changeProfile(data: TSignUp) {
+    changeProfile(data: TSignUp): Promise<unknown> {
         return _http.put('/profile', data);
     }
 
-    changeAvatar(avatar: FormData) {
+    changeAvatar(avatar: FormData): Promise<unknown> {
         return _http.put('/profile/avatar', avatar);
     }
 
-    changeUserPassword(data: TPassword) {
+    changeUserPassword(data: TPassword): Promise<unknown> {
         return _http.put('/password', data);
     }
 }

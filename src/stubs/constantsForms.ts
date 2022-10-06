@@ -59,7 +59,7 @@ export const propsInput = {
         label: 'Телефон',
         name: 'phone',
         type: 'tel',
-        placeholder: '+78001002030',
+        placeholder: '88001002030',
         value: '',
     },
 

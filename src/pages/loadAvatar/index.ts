@@ -1,12 +1,12 @@
-import tpl from './tpl.hbs';
 import Block from '../../core/Block';
-import ReloadAvatar from '../../components/reloadAvatar';
 import userController from '../../controllers/userController';
 import { getAvatar } from '../../utils/getUserData';
+import ReloadAvatar from '../../components/reloadAvatar';
+import tpl from './tpl.hbs';
 import startPic from '../../image/cat.png';
 
 export default class LoadAvatar extends Block {
-    constructor(props: Record<string, any> = {}) {
+    public constructor(props: Record<string, any> = {}) {
         const reloadAvatar = new ReloadAvatar({
             src: getAvatar() || startPic,
             events: {

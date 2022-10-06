@@ -1,10 +1,10 @@
-import { IMessageProps } from "../components/chatsOnline";
+import { IMessageProps } from '../components/messageAside';
 
-export const getDataFromChat = (
+export const getValueOnCurrentChat = (
     currentChatId: string,
     localStorageKey: string,
     valueKey: string,
-) => {
+): string | string[] => {
     let value: string | string[] = valueKey === 'users' ? [] : '';
     const item = localStorage.getItem(localStorageKey);
     let chats;

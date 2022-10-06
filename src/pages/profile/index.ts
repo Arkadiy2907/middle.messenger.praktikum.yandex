@@ -1,17 +1,17 @@
-import tpl from './tpl.hbs';
 import Block from '../../core/Block';
+import { router } from '../..';
+import authController from '../../controllers/authController';
+import { propsInput } from '../../stubs/constantsForms';
+import { getAvatar, getUserData } from '../../utils/getUserData';
 import ArrowPrevPage from '../../components/arrowPrevPage';
 import Link from '../../components/link';
 import Avatar from '../../components/avatar';
 import Input from '../../components/input';
-import { propsInput } from '../../stubs/constantsForms';
+import tpl from './tpl.hbs';
 import startPic from '../../image/cat.png';
-import { router } from '../..';
-import authController from '../../controllers/authController';
-import { getAvatar, getUserData } from '../../utils/getUserData';
 
 export default class Profile extends Block {
-    constructor(props: Record<string, any> = {}) {
+    public constructor(props: Record<string, any> = {}) {
         const prevArrow = new ArrowPrevPage({
             events: {
                 click: (event) => {

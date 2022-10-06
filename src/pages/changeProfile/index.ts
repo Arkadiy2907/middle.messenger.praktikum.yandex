@@ -1,20 +1,20 @@
 import Block from '../../core/Block';
-import tpl from './tpl.hbs';
+import { router } from '../..';
+import userController from '../../controllers/userController';
+import { propsInput } from '../../stubs/constantsForms';
+import { inputIsNotValid, validMessage, getResForm } from '../../core/valid';
+import { getAvatar, getUserData } from '../../utils/getUserData';
+import { eventFocus, eventBlur } from '../../utils/eventForms';
 import ArrowPrevPage from '../../components/arrowPrevPage';
 import Avatar from '../../components/avatar';
 import Input from '../../components/input/index';
 import ButtonBlue from '../../components/button';
-import { propsInput } from '../../stubs/constantsForms';
-import { inputIsNotValid, validMessage, getResForm } from '../../core/valid';
-import { eventFocus, eventBlur } from '../../utils/eventForms';
-import { TSignUp } from '../registration';
+import tpl from './tpl.hbs';
 import startPic from '../../image/cat.png';
-import { router } from '../..';
-import userController from '../../controllers/userController';
-import { getAvatar, getUserData } from '../../utils/getUserData';
+import { TSignUp } from '../registration';
 
 export default class ChangeProfile extends Block {
-    constructor(props: Record<string, any> = {}) {
+    public constructor(props: Record<string, any> = {}) {
         const prevArrow = new ArrowPrevPage({
             events: {
                 click: (event) => {
@@ -190,7 +190,7 @@ export default class ChangeProfile extends Block {
                             if (result?.success) {
                                 router.go('/profile');
                             } else {
-                                router.go('/fourHundredFour');
+                                router.go('/warning');
                             }
                         });
                     }

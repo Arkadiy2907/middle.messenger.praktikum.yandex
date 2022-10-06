@@ -60,10 +60,12 @@ $colorFont: #ff6600;
 	.addDelUser {
 		display: flex;
 
-		.addUser, .delUser{
+		.addUser,
+		.delUser {
 			display: flex;
-			
-			.inputAddUser, .inputDelUser {
+
+			.inputAddUser,
+			.inputDelUser {
 				border-radius: 5px;
 				padding-left: 3px;
 
@@ -71,12 +73,20 @@ $colorFont: #ff6600;
 					color: $colorBlack;
 					font-size: 13px;
 					text-align: center;
-				}		
+				}
 			}
 
-			.btn_blue{
+			.btn_blue {
 				width: 50%;
 				margin: 0 15px 0 5px;
+			}
+		}
+
+		.delChat {
+			margin: 0 5px;
+
+			.btn_blue {
+				width: 50%;
 			}
 		}
 	}
@@ -102,7 +112,7 @@ $colorFont: #ff6600;
 		align-items: flex-end;
 		max-width: 49%;
 		margin-bottom: 10px;
-		text-align: start;		
+		text-align: start;
 	}
 
 	.time {
@@ -137,7 +147,8 @@ $colorFont: #ff6600;
 %searchChat {
 	margin-bottom: 14px;
 
-	.search, .create {
+	.search,
+	.create {
 		background-color: $colorBg;
 		width: 100%;
 		height: 32px;
@@ -251,6 +262,9 @@ $colorFont: #ff6600;
 		.text {
 			font-size: 20px;
 			margin-bottom: 6rem;
+		}
+		.btn_text {
+			font-size: 22px;
 		}
 	}
 }

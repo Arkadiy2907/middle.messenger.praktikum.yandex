@@ -1,7 +1,7 @@
 import store from '../store';
 import userApi from '../api/userApi';
-import { TSignUp } from '../pages/registration';
 import authController from './authController';
+import { TSignUp } from '../pages/registration';
 
 type TPassword = {
     oldPassword: string;
@@ -22,7 +22,8 @@ class UserController {
     public async changeAvatar(file: File, image: HTMLImageElement) {
         try {
             const data = new FormData();
-            data.append('avatar', file, `avatar.${file.type.split('/')[1]}`);
+            const fileNameFileSystemUser = 1;
+            data.append('avatar', file, `avatar.${file.type.split('/')[fileNameFileSystemUser]}`);
             await userApi.changeAvatar(data);
             this.updateImage(file, image);
             await authController.getUser();
@@ -36,8 +37,8 @@ class UserController {
 
         reader.onload = async (e) => {
             const base64 = e.target!.result;
-            const newImage = { ...image };
-            newImage.src = base64 as string;
+            const newImage = { ...image, src: base64 };
+            newImage.src = base64;
             store.changeState({ avatarIcon: base64 }, true);
         };
 

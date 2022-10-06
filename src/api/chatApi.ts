@@ -12,23 +12,27 @@ type TChatUser = {
 const _http = new Client('/chats');
 
 class ChatApi {
-    get() {
+    get(): Promise<unknown> {
         return _http.get('/');
     }
 
-    createChat(data: TCreateChat) {
+    deleteChat(id: number): Promise<unknown> {
+        return _http.delete('/', { chatId: id });
+    }
+
+    createChat(data: TCreateChat): Promise<unknown> {
         return _http.post('/', data);
     }
 
-    addUser(data: TChatUser) {
+    addUser(data: TChatUser): Promise<unknown> {
         return _http.put('/users', data);
     }
 
-    deleteUsers(data: TChatUser) {
+    deleteUsers(data: TChatUser): Promise<unknown> {
         return _http.delete('/users', data);
     }
 
-    getChatUsers(chatId: number = 0) {
+    getChatUsers(chatId: number = 0): Promise<unknown> {
         return _http.post(`/token/${chatId}`);
     }
 }

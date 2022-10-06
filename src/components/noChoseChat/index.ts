@@ -1,12 +1,12 @@
-import tpl from './tpl.hbs';
 import Block from '../../core/Block';
+import tpl from './tpl.hbs';
 
-interface INoChoseChat {
+type TNoChoseChat = {
     value: string;
 }
 
-export default class NoChoseChat extends Block {
-    constructor(props: INoChoseChat) {
+export default class NoChoseChat extends Block<TNoChoseChat> {
+    public constructor(props: TNoChoseChat) {
         super('div', props);
     }
 
