@@ -4,7 +4,7 @@
     "source": "src/index.html",
     "scripts": {
         "dev": "parcel src/index.html --open --port 3000 --no-source-maps --no-cache",
-        "build": "parcel build src/index.html",
+        "build": "parcel build src/index.html --no-cache",
         "start": "node server.js",
         "lint": "eslint src/**/*.ts",
         "lint:fix": "eslint src/**/*.ts --fix"

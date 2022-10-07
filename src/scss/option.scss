@@ -51,11 +51,51 @@ $colorFont: #ff6600;
 		}
 
 		.chat__title {
-			margin-left: 10px;
+			margin: 0 12px;
 			font-size: 13px;
 			font-weight: 600;
 		}
 	}
+
+	.addDelUser {
+		display: flex;
+
+		.addUser,
+		.delUser {
+			display: flex;
+
+			.inputAddUser,
+			.inputDelUser {
+				border-radius: 5px;
+				padding-left: 3px;
+
+				&::placeholder {
+					color: $colorBlack;
+					font-size: 13px;
+					text-align: center;
+				}
+			}
+
+			.btn_blue {
+				width: 50%;
+				margin: 0 15px 0 5px;
+			}
+		}
+
+		.delChat {
+			margin: 0 5px;
+
+			.btn_blue {
+				width: 50%;
+			}
+		}
+	}
+}
+
+%time {
+	font-size: 8px;
+	color: $colorGrey;
+	margin-left: 7px;
 }
 
 %wrapConentChatsOtherUser {
@@ -67,27 +107,16 @@ $colorFont: #ff6600;
 	font-weight: 500;
 	color: $colorBlack;
 
-	.messages__content {
+	.textMessage {
 		display: flex;
 		align-items: flex-end;
 		max-width: 49%;
 		margin-bottom: 10px;
+		text-align: start;
+	}
 
-		.content_text {
-			text-align: start;
-		}
-
-		.img {
-			max-width: 320px;
-			border-radius: 12px;
-			object-fit: cover;
-		}
-
-		.time {
-			font-size: 9px;
-			color: $colorGrey;
-			padding: 2px;
-		}
+	.time {
+		@extend %time;
 	}
 }
 
@@ -95,29 +124,31 @@ $colorFont: #ff6600;
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
+	flex-direction: column;
 	width: 100%;
 	line-height: 15px;
 	margin-bottom: 30px;
 
-	.messages__content {
+	.textMessage {
 		display: flex;
 		align-items: flex-end;
 		max-width: 50%;
 		background-color: $colorActiveChat;
 		border-radius: 5px;
 		padding: 11px;
+		margin: 2px 0;
 	}
 
 	.time {
-		font-size: 9px;
-		color: $colorGrey;
+		@extend %time;
 	}
 }
 
 %searchChat {
 	margin-bottom: 14px;
 
-	.search {
+	.search,
+	.create {
 		background-color: $colorBg;
 		width: 100%;
 		height: 32px;
@@ -232,6 +263,9 @@ $colorFont: #ff6600;
 			font-size: 20px;
 			margin-bottom: 6rem;
 		}
+		.btn_text {
+			font-size: 22px;
+		}
 	}
 }
 
@@ -250,21 +284,9 @@ $colorFont: #ff6600;
 
 	.title {
 		font-size: 15px;
-		margin-bottom: 43px;
+		margin-bottom: 3.2rem;
 		color: $colorBlack;
 		text-align: center;
-	}
-
-	.loadAvatar_change {
-		margin-bottom: 45px;
-		text-align: center;
-		max-width: 35%;
-		text-decoration: underline;
-	}
-
-	.loadAvatar_btn {
-		width: 100%;
-		margin-bottom: 20px;
 	}
 }
 

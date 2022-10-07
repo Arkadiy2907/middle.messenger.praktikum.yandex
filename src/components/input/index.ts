@@ -1,20 +1,21 @@
-import tpl from './tpl.hbs';
 import Block from '../../core/Block';
+import tpl from './tpl.hbs';
 
-interface IInputProps {
+type TInputProps = {
     name: string;
-    label: string;
+    label?: string;
     type: string;
     placeholder?: string;
     readonly?: string;
     class?: string;
+    value?: string;
     events?: {
         blur: (event: InputEvent) => void;
         focus: (event: InputEvent) => void;
     };
 }
-class Input extends Block {
-    constructor(props: IInputProps) {
+class Input extends Block<TInputProps> {
+    public constructor(props: TInputProps) {
         super('div', props);
     }
 

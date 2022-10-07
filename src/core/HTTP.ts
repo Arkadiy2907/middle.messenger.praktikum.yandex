@@ -1,69 +1,64 @@
 type Methods = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
 type TOptions = {
-    headers: Record<string, string>;
-    method: Methods;
-    data: Record<string, unknown>;
-    timeout?: number;
+    headers?: Record<string, string>;
+    method?: Methods;
+    data?: any;
+    contentType?: string;
 };
 
-function queryStringify(data: Record<string, any>) {
-    if (typeof data !== 'object') {
-        throw new Error('Data must be object');
+export class Client {
+    protected url: string;
+
+    constructor(path: string) {
+        this.url = `https://ya-praktikum.tech/api/v2${path}`;
     }
 
-    const keys = Object.keys(data);
-    return keys.reduce((result, key, index) => `${result}${key}=${data[key]}${index < keys.length - 1 ? '&' : ''}`, '?');
-}
+    get = (path = '/', data?: unknown, headers?: Record<string, string>) => this.request(this.url + path, { data, headers, method: 'GET' });
 
-class Client {
-    get = (url: string, options: TOptions) => this.request(url, { ...options, method: 'GET' }, options.timeout);
+    post = (path: string, data?: unknown, headers?: Record<string, string>) => this.request(this.url + path, { method: 'POST', data, headers });
 
-    post = (url: string, options: TOptions) => this.request(url, { ...options, method: 'POST' }, options.timeout);
+    put = (path: string, data: unknown, headers?: Record<string, string>, contentType?: string) => this.request(this.url + path, {
+        method: 'PUT', data, headers, contentType,
+    });
 
-    put = (url: string, options: TOptions) => this.request(url, { ...options, method: 'PUT' }, options.timeout);
+    delete = (path: string, data?: unknown, headers?: Record<string, string>) => this.request(this.url + path, { method: 'DELETE', data, headers });
 
-    delete = (url: string, options: TOptions) => this.request(
-        url,
-        {
-            ...options,
-            method: 'DELETE',
-        },
-        options.timeout,
-    );
-
-    request = (url: string, options: TOptions, time = 5000) => {
-        const { headers = {}, method, data } = options;
+    request = (url: string, options: TOptions = { method: 'GET' }) => {
+        const { method, data = {}, headers = {} } = options;
 
         return new Promise((resolve, reject) => {
-            if (!method) {
-                reject(new Error('No method'));
-                return;
-            }
-
             const xhr = new XMLHttpRequest();
-            const isGet = method === 'GET';
+            xhr.open(method || '', url);
 
-            xhr.open(method, isGet && !!data ? `${url}${queryStringify(data as any)}` : url);
-
-            Object.keys(headers).forEach((key) => {
-                xhr.setRequestHeader(key, headers[key]);
-            });
-
-            xhr.onload = function () {
-                resolve(xhr);
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status >= 200 && xhr.status <= 299) {
+                        resolve(xhr.response);
+                    } else {
+                        reject(xhr.response);
+                    }
+                }
             };
 
-            xhr.onabort = reject;
-            xhr.onerror = reject;
+            xhr.onabort = () => reject({ reason: 'abort' });
+            xhr.onerror = () => reject({ reason: 'network error' });
+            xhr.ontimeout = () => reject({ reason: 'timeout' });
 
-            xhr.timeout = time;
-            xhr.ontimeout = reject;
+            xhr.withCredentials = true;
+            xhr.responseType = 'json';
 
-            if (isGet || !data) {
+            Object.entries(headers).forEach((entry) => xhr.setRequestHeader(entry[0], entry[1]));
+            xhr.setRequestHeader('Accept', 'application/json');
+
+            if (method === 'GET' || !data) {
+                xhr.setRequestHeader('Content-Type', 'application/json');
                 xhr.send();
+            } else if (data instanceof FormData) {
+                xhr.send(data);
             } else {
-                xhr.send(data as any);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.send(JSON.stringify(data));
             }
         });
     };

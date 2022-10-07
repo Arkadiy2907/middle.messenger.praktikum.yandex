@@ -1,19 +1,40 @@
 import Block from '../../core/Block';
-import tpl from './tpl.hbs';
+import { router } from '../..';
+import userController from '../../controllers/userController';
+import { propsInput } from '../../stubs/constantsForms';
+import { inputIsNotValid, validMessage, getResForm } from '../../core/valid';
+import { eventFocus, eventBlur } from '../../utils/eventForms';
+import { getAvatar, getUserData } from '../../utils/getUserData';
 import ArrowPrevPage from '../../components/arrowPrevPage';
 import Avatar from '../../components/avatar';
 import ButtonBlue from '../../components/button';
-import src from '../../image/cat.png';
 import Input from '../../components/input';
-import { propsInput } from '../../stubs/constantsForms';
-import { inputIsNotValid, validMessage } from '../../core/valid';
-import { eventFocus, eventBlur } from '../../utils/eventForms';
-import { goNextPage } from '../../utils/nextPage';
+import tpl from './tpl.hbs';
+import startPic from '../../image/cat.png';
+
+type TPassword = {
+    oldPassword: string;
+    newPassword: string;
+};
 
 export default class ChangePassword extends Block {
-    constructor(props: Record<string, any> = {}) {
-        const prevArrow = new ArrowPrevPage({ href: '/profile' });
-        const avatarLog = new Avatar({ displayName: 'Иван', href: '/loadAvatar', src: `${src}` });
+    public constructor(props: Record<string, any> = {}) {
+        const prevArrow = new ArrowPrevPage({
+            events: {
+                click: (event) => {
+                    event.preventDefault();
+                    router.go('/profile');
+                },
+            },
+        });
+
+        const currentUser = getUserData() || {};
+        const avatarIcon = getAvatar();
+
+        const avatarLog = new Avatar({
+            displayName: `${currentUser?.login}`,
+            src: avatarIcon || startPic,
+        });
 
         const { oldPassword, password, passwordAgain } = propsInput;
 
@@ -64,28 +85,49 @@ export default class ChangePassword extends Block {
                     const inputPasswordTarget = document.querySelector<HTMLInputElement>('.changePasswordPassword');
                     const inputPasswordAgainTarget = document.querySelector<HTMLInputElement>('.changePasswordPasswordAgain');
 
-                    inputIsNotValid({
+                    const validOldPassword = inputIsNotValid({
                         input: validMessage.oldPassword,
                         target: inputOldPasswordTarget!,
                         value: inputOldPasswordTarget!.value,
                         message: validMessage.oldPassword.message,
                     });
 
-                    inputIsNotValid({
+                    const validPassword = inputIsNotValid({
                         input: validMessage.password,
                         target: inputPasswordTarget!,
                         value: inputPasswordTarget!.value,
                         message: validMessage.password.message,
                     });
 
-                    inputIsNotValid({
+                    const validPasswordAgain = inputIsNotValid({
                         input: validMessage.passwordAgain,
                         target: inputPasswordAgainTarget!,
                         value: inputPasswordAgainTarget!.value,
                         message: validMessage.passwordAgain.message,
                     });
 
-                    goNextPage('/profile');
+                    const {
+                        oldPassword, password,
+                    } = getResForm('form');
+
+                    const data: TPassword = {
+                        oldPassword,
+                        newPassword: password,
+                    };
+
+                    if (
+                        validOldPassword
+                        && validPassword
+                        && validPasswordAgain
+                    ) {
+                        userController.changeUserPassword(data).then((result) => {
+                            if (result?.success) {
+                                router.go('/profile');
+                            } else {
+                                router.go('/warning');
+                            }
+                        });
+                    }
                 },
             },
         });

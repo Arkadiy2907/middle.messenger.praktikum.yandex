@@ -1,19 +1,36 @@
 import Block from '../../core/Block';
-import tpl from './tpl.hbs';
+import { router } from '../..';
+import userController from '../../controllers/userController';
+import { propsInput } from '../../stubs/constantsForms';
+import { inputIsNotValid, validMessage, getResForm } from '../../core/valid';
+import { getAvatar, getUserData } from '../../utils/getUserData';
+import { eventFocus, eventBlur } from '../../utils/eventForms';
 import ArrowPrevPage from '../../components/arrowPrevPage';
 import Avatar from '../../components/avatar';
-import src from '../../image/cat.png';
 import Input from '../../components/input/index';
 import ButtonBlue from '../../components/button';
-import { propsInput } from '../../stubs/constantsForms';
-import { inputIsNotValid, validMessage } from '../../core/valid';
-import { eventFocus, eventBlur } from '../../utils/eventForms';
-import { goNextPage } from '../../utils/nextPage';
+import tpl from './tpl.hbs';
+import startPic from '../../image/cat.png';
+import { TSignUp } from '../registration';
 
 export default class ChangeProfile extends Block {
-    constructor(props: Record<string, any> = {}) {
-        const prevArrow = new ArrowPrevPage({ href: '/profile' });
-        const avatarLog = new Avatar({ displayName: 'Иван', href: '/loadAvatar', src: `${src}` });
+    public constructor(props: Record<string, any> = {}) {
+        const prevArrow = new ArrowPrevPage({
+            events: {
+                click: (event) => {
+                    event.preventDefault();
+                    router.go('/profile');
+                },
+            },
+        });
+        const currentUser = getUserData() || {};
+        const avatarIcon = getAvatar();
+
+        const avatarLog = new Avatar({
+            displayName: `${currentUser?.login}`,
+            src: avatarIcon || startPic,
+        });
+
         const {
             email, login, firstName, secondName, phone, displayName,
         } = propsInput;
@@ -21,6 +38,7 @@ export default class ChangeProfile extends Block {
         const inputEmail = new Input({
             ...email,
             class: 'changeProfileEmail',
+            value: currentUser?.email,
             events: {
                 blur: (e) => {
                     eventBlur(e, email);
@@ -34,6 +52,7 @@ export default class ChangeProfile extends Block {
         const inputLogin = new Input({
             ...login,
             class: 'changeProfileLogin',
+            value: currentUser?.login,
             events: {
                 blur: (e) => {
                     eventBlur(e, login);
@@ -47,6 +66,7 @@ export default class ChangeProfile extends Block {
         const inputFirstName = new Input({
             ...firstName,
             class: 'changeProfileFirstName',
+            value: currentUser?.first_name,
             events: {
                 blur: (e) => {
                     eventBlur(e, firstName);
@@ -60,6 +80,7 @@ export default class ChangeProfile extends Block {
         const inputSecondName = new Input({
             ...secondName,
             class: 'changeProfileSecondName',
+            value: currentUser?.second_name,
             events: {
                 blur: (e) => {
                     eventBlur(e, secondName);
@@ -73,6 +94,7 @@ export default class ChangeProfile extends Block {
         const inputDisplayName = new Input({
             ...displayName,
             class: 'changeProfileDisplayName',
+            value: currentUser?.display_name,
             events: {
                 blur: (e) => {
                     eventBlur(e, displayName);
@@ -86,6 +108,7 @@ export default class ChangeProfile extends Block {
         const inputPhone = new Input({
             ...phone,
             class: 'changeProfilePhone',
+            value: currentUser?.phone,
             events: {
                 blur: (e) => {
                     eventBlur(e, phone);
@@ -108,42 +131,69 @@ export default class ChangeProfile extends Block {
                     const inputSecondNameTarget = document.querySelector<HTMLInputElement>('.changeProfileSecondName');
                     const inputPhoneTarget = document.querySelector<HTMLInputElement>('.changeProfilePhone');
 
-                    inputIsNotValid({
+                    const validEmail = inputIsNotValid({
                         input: validMessage.email,
                         target: inputEmailTarget!,
                         value: inputEmailTarget!.value,
                         message: validMessage.email.message,
                     });
 
-                    inputIsNotValid({
+                    const validLogin = inputIsNotValid({
                         input: validMessage.login,
                         target: inputLoginTarget!,
                         value: inputLoginTarget!.value,
                         message: validMessage.login.message,
                     });
 
-                    inputIsNotValid({
+                    const validFirstName = inputIsNotValid({
                         input: validMessage.firstName,
                         target: inputFirstNameTarget!,
                         value: inputFirstNameTarget!.value,
                         message: validMessage.firstName.message,
                     });
 
-                    inputIsNotValid({
+                    const validSecondName = inputIsNotValid({
                         input: validMessage.secondName,
                         target: inputSecondNameTarget!,
                         value: inputSecondNameTarget!.value,
                         message: validMessage.secondName.message,
                     });
 
-                    inputIsNotValid({
+                    const validPhone = inputIsNotValid({
                         input: validMessage.phone,
                         target: inputPhoneTarget!,
                         value: inputPhoneTarget!.value,
                         message: validMessage.phone.message,
                     });
 
-                    goNextPage('/profile');
+                    const {
+                        email, login, firstName, secondName, phone,
+                    } = getResForm('form');
+
+                    const data: TSignUp = {
+                        email,
+                        login,
+                        first_name: firstName,
+                        second_name: secondName,
+                        phone,
+                        display_name: login,
+                    };
+
+                    if (
+                        validEmail
+                        && validLogin
+                        && validFirstName
+                        && validSecondName
+                        && validPhone
+                    ) {
+                        userController.changeProfile(data).then((result) => {
+                            if (result?.success) {
+                                router.go('/profile');
+                            } else {
+                                router.go('/warning');
+                            }
+                        });
+                    }
                 },
             },
         });

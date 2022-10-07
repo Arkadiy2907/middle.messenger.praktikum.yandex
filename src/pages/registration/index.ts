@@ -1,16 +1,35 @@
 import Block from '../../core/Block';
-import tpl from './tpl.hbs';
+import { router } from '../..';
+import authController from '../../controllers/authController';
+import { propsInput } from '../../stubs/constantsForms';
+import { inputIsNotValid, validMessage, getResForm } from '../../core/valid';
+import { eventFocus, eventBlur } from '../../utils/eventForms';
 import Link from '../../components/link';
 import ButtonBlue from '../../components/button';
 import Input from '../../components/input/index';
-import { propsInput } from '../../stubs/constantsForms';
-import { inputIsNotValid, validMessage } from '../../core/valid';
-import { eventFocus, eventBlur } from '../../utils/eventForms';
-import { goNextPage } from '../../utils/nextPage';
+import tpl from './tpl.hbs';
+
+export type TSignUp = {
+    first_name: string;
+    second_name: string;
+    login: string;
+    email: string;
+    password?: string;
+    display_name?: string;
+    phone: string;
+};
 
 export default class Registration extends Block {
-    constructor(props: Record<string, any> = {}) {
-        const buttonText = new Link({ value: 'Войти', href: '/' });
+    public constructor(props: Record<string, any> = {}) {
+        const buttonText = new Link({
+            value: 'Войти',
+            events: {
+                click: (event) => {
+                    event.preventDefault();
+                    router.go('/login');
+                },
+            },
+        });
 
         const {
             email, login, firstName, secondName, phone, password, passwordAgain,
@@ -121,56 +140,85 @@ export default class Registration extends Block {
                     const inputPasswordTarget = document.querySelector<HTMLInputElement>('.registrationPassword');
                     const inputPasswordAgainTarget = document.querySelector<HTMLInputElement>('.registrationPasswordAgain');
 
-                    inputIsNotValid({
+                    const validEmail = inputIsNotValid({
                         input: validMessage.email,
                         target: inputEmailTarget!,
                         value: inputEmailTarget!.value,
                         message: validMessage.email.message,
                     });
 
-                    inputIsNotValid({
+                    const validLogin = inputIsNotValid({
                         input: validMessage.login,
                         target: inputLoginTarget!,
                         value: inputLoginTarget!.value,
                         message: validMessage.login.message,
                     });
 
-                    inputIsNotValid({
+                    const validFirstName = inputIsNotValid({
                         input: validMessage.firstName,
                         target: inputFirstNameTarget!,
                         value: inputFirstNameTarget!.value,
                         message: validMessage.firstName.message,
                     });
 
-                    inputIsNotValid({
+                    const validSecondName = inputIsNotValid({
                         input: validMessage.secondName,
                         target: inputSecondNameTarget!,
                         value: inputSecondNameTarget!.value,
                         message: validMessage.secondName.message,
                     });
 
-                    inputIsNotValid({
+                    const validPhone = inputIsNotValid({
                         input: validMessage.phone,
                         target: inputPhoneTarget!,
                         value: inputPhoneTarget!.value,
                         message: validMessage.phone.message,
                     });
 
-                    inputIsNotValid({
+                    const validPassword = inputIsNotValid({
                         input: validMessage.password,
                         target: inputPasswordTarget!,
                         value: inputPasswordTarget!.value,
                         message: validMessage.password.message,
                     });
 
-                    inputIsNotValid({
+                    const validPasswordAgain = inputIsNotValid({
                         input: validMessage.passwordAgain,
                         target: inputPasswordAgainTarget!,
                         value: inputPasswordAgainTarget!.value,
                         message: validMessage.passwordAgain.message,
                     });
 
-                    goNextPage('/chooseChat');
+                    const {
+                        email, login, firstName, secondName, phone, password,
+                    } = getResForm('form');
+
+                    const data: TSignUp = {
+                        email,
+                        login,
+                        first_name: firstName,
+                        second_name: secondName,
+                        phone,
+                        password,
+                    };
+
+                    if (
+                        validEmail
+                        && validLogin
+                        && validFirstName
+                        && validSecondName
+                        && validPhone
+                        && validPassword
+                        && validPasswordAgain
+                    ) {
+                        authController.signUp(data).then((result) => {
+                            if (result?.success) {
+                                router.go('/chooseChat');
+                            } else {
+                                router.go('/warning');
+                            }
+                        });
+                    }
                 },
             },
         });

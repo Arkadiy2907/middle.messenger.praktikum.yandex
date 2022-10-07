@@ -28,12 +28,10 @@ export const getResForm = (form: string) => {
     const dataObject: Record<string, any> = {};
     const formElement = document.querySelector<HTMLFormElement>(form);
     const formData = new FormData(formElement!);
-    console.log(formData);
     for (const [name, value] of formData) {
         dataObject[name] = value;
     }
 
-    console.log(dataObject);
     return dataObject;
 };
 
@@ -130,6 +128,7 @@ export const inputIsNotValid = ({
     input, target, value, message,
 }: InputIsNotValid) => {
     !input.isValid(value) && addErrorMessage(target, message);
+    return input.isValid(value);
 };
 
 export const addErrorMessage = (input: any, message: string) => {

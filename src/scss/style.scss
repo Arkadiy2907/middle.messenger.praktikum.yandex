@@ -3,6 +3,7 @@
 @import "./option.scss";
 
 @import "../components/avatar/avatar.scss";
+@import "../components/reloadAvatar/reloadAvatar.scss";
 @import "../components/button/btnBlue.scss";
 @import "../components/link/link.scss";
 
@@ -10,21 +11,18 @@
 @import "../components/arrowPrevPage/arrow.scss";
 @import "../components/message/message.scss";
 
-@import "../pages/index/index.scss";
+@import "../pages/login/login.scss";
 @import "../pages/registration/registration.scss";
 
 @import "../pages/chooseChat/chooseChat.scss";
-@import "../pages/searchChat/searchChat.scss";
-@import "../pages/chatOnline/chatOnline.scss";
+@import "../components/noChoseChat/noChoseChat.scss";
+@import "../components/chatsOnline/chatOnline.scss";
 
 @import "../pages/fiveHundred/fiveHundred.scss";
-@import "../pages/fourHundredFour/fourHundredFour.scss";
+@import "../pages/warning/warning.scss";
 
 @import "../pages/profile/profile.scss";
 @import "../pages/changeProfile/changeProfile.scss";
 @import "../pages/changePassword/changePassword.scss";
 
-@import "../pages/changeAvatar/loadAvatar/chooseFileAvatar.scss";
-@import "../pages/changeAvatar/fileError/errorFileAvatar.scss";
-@import "../pages/changeAvatar/fileOk/fileOkAvatar.scss";
-@import "../pages/changeAvatar/reloadFile/reloadFileAvatar.scss";
+@import "../pages/loadAvatar/chooseFileAvatar.scss";

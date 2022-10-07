@@ -1,17 +1,16 @@
-import tpl from './tpl.hbs';
 import Block from '../../core/Block';
+import tpl from './tpl.hbs';
 
-interface IAvatarProps {
+type TAvatarProps = {
     displayName: string;
-    href: string;
     src?: string;
     events?: {
         click: (event: Event) => void;
     };
 }
 
-export default class Avatar extends Block {
-    constructor(props: IAvatarProps) {
+export default class Avatar extends Block<TAvatarProps> {
+    public constructor(props: TAvatarProps) {
         super('div', props);
     }
 

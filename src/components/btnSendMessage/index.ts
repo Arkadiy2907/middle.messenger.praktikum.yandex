@@ -1,7 +1,7 @@
-import tpl from './tpl.hbs';
 import Block from '../../core/Block';
+import tpl from './tpl.hbs';
 
-interface IBtnSendMessageProps {
+type TBtnSendMessageProps = {
     value?: string;
     href?: string;
     events?: {
@@ -9,8 +9,8 @@ interface IBtnSendMessageProps {
     };
 }
 
-export default class BtnSendMessage extends Block {
-    constructor(props: IBtnSendMessageProps) {
+export default class BtnSendMessage extends Block<TBtnSendMessageProps> {
+    public constructor(props: TBtnSendMessageProps) {
         super('div', props);
     }
 
