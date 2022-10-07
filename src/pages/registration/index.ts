@@ -1,13 +1,13 @@
 import Block from '../../core/Block';
-import tpl from './tpl.hbs';
-import Link from '../../components/link';
-import ButtonBlue from '../../components/button';
-import Input from '../../components/input/index';
+import { router } from '../..';
+import authController from '../../controllers/authController';
 import { propsInput } from '../../stubs/constantsForms';
 import { inputIsNotValid, validMessage, getResForm } from '../../core/valid';
 import { eventFocus, eventBlur } from '../../utils/eventForms';
-import authController from '../../controllers/authController';
-import { router } from '../..';
+import Link from '../../components/link';
+import ButtonBlue from '../../components/button';
+import Input from '../../components/input/index';
+import tpl from './tpl.hbs';
 
 export type TSignUp = {
     first_name: string;
@@ -20,7 +20,7 @@ export type TSignUp = {
 };
 
 export default class Registration extends Block {
-    constructor(props: Record<string, any> = {}) {
+    public constructor(props: Record<string, any> = {}) {
         const buttonText = new Link({
             value: 'Войти',
             events: {
@@ -215,7 +215,7 @@ export default class Registration extends Block {
                             if (result?.success) {
                                 router.go('/chooseChat');
                             } else {
-                                router.go('/fourHundredFour');
+                                router.go('/warning');
                             }
                         });
                     }

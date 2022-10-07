@@ -1,7 +1,7 @@
-import tpl from './tpl.hbs';
 import Block from '../../core/Block';
+import tpl from './tpl.hbs';
 
-interface ILinkProps {
+type TLinkProps = {
     value: string;
     href?: string;
     events?: {
@@ -9,8 +9,8 @@ interface ILinkProps {
     };
 }
 
-export default class Link extends Block {
-    constructor(props: ILinkProps) {
+export default class Link extends Block<TLinkProps> {
+    public constructor(props: TLinkProps) {
         super('div', props);
     }
 

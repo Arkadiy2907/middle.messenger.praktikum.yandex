@@ -1,16 +1,16 @@
 import renderDom from '../renderDOM';
-import { isEqualString } from '../../utils/isEqualString';
+import Block from '../Block';
 
 export class Route {
-    private _pathname: any;
+    private _pathname: string;
 
-    private _blockClass: any;
+    private _blockClass: typeof Block;
 
-    private _block: any;
+    private _block: Block | null;
 
-    private _props: any;
+    private _props: Record<string, any>;
 
-    constructor(pathname: string, view: any, props: any) {
+    constructor(pathname: string, view: typeof Block, props: Record<string, any>) {
         this._pathname = pathname;
         this._blockClass = view;
         this._block = null;
@@ -31,7 +31,7 @@ export class Route {
     }
 
     match(pathname: string): boolean {
-        return isEqualString(pathname, this._pathname);
+        return pathname === this._pathname;
     }
 
     render() {

@@ -1,17 +1,26 @@
-import tpl from './tpl.hbs';
 import Block from '../../core/Block';
-import ButtonBlue from '../button';
-import Link from '../link';
-import store from '../../store';
 import { router } from '../..';
+import store from '../../store';
 import authController from '../../controllers/authController';
 import chatController from '../../controllers/chatController';
+import ButtonBlue from '../button';
 import Input from '../input';
-import { IMessageProps } from '../chatsOnline';
+import Link from '../link';
 import Message from '../message';
+import tpl from './tpl.hbs';
+
+export interface IMessageProps {
+    avatar?: string;
+    title?: string;
+    created_by?: number;
+    last_message?: Record<string, any>;
+    time?: Date;
+    id: number;
+    unread_count?: number;
+}
 
 export default class MessageAside extends Block {
-    constructor(props: Record<string, any> = {}) {
+    public constructor(props: Record<string, any> = {}) {
         const signOut = new Link({
             value: 'выход из профиля',
             events: {
@@ -101,9 +110,11 @@ export default class MessageAside extends Block {
 
 async function createNewChat() {
     const createChat = document.querySelector<HTMLInputElement>('.create');
-    const title = createChat!.value === '' ? 'новый чат без имени' : createChat!.value;
-    await chatController.createChat({ title });
-    router.go('/chooseChat');
+    if (createChat) {
+        const title = createChat!.value === '' ? 'новый чат без имени' : createChat!.value;
+        await chatController.createChat({ title });
+        router.go('/chooseChat');
+    }
 }
 
 const openSelectedChat = async (elemData: IMessageProps) => {

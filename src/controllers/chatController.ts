@@ -81,6 +81,15 @@ class ChatController {
             console.log(e);
         }
     }
+
+    public async deleteChat(chatId: number) {
+        try {
+            await chatApi.deleteChat(chatId);
+            await this.getAllChats();
+        } catch (e) {
+            console.log(e);
+        }
+    }
 }
 
 const chatController = new ChatController();

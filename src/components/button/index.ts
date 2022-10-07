@@ -1,20 +1,17 @@
-import tpl from './tpl.hbs';
 import Block from '../../core/Block';
+import tpl from './tpl.hbs';
 
-type EventType = Record<string, (e: Event) => void>;
-
-interface IButtonBlueProps {
+type TButtonBlueProps = {
     value: string;
     href?: string;
     type?: string;
     events?: {
         click: (event: Event) => void;
-	};
-	event?: EventType;
-}
+    };
+};
 
-export default class ButtonBlue extends Block {
-    constructor(props: IButtonBlueProps) {
+export default class ButtonBlue extends Block<TButtonBlueProps> {
+    public constructor(props: TButtonBlueProps) {
         super('div', props);
     }
 

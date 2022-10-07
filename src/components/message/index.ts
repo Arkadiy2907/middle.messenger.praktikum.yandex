@@ -1,7 +1,7 @@
-import tpl from './tpl.hbs';
 import Block from '../../core/Block';
+import tpl from './tpl.hbs';
 
-interface IMessageProps {
+type TMessageProps = {
     avatar?: string;
     title?: string;
     href?: string;
@@ -17,8 +17,8 @@ interface IMessageProps {
     };
 }
 
-export default class Message extends Block {
-    constructor(props: IMessageProps) {
+export default class Message extends Block<TMessageProps> {
+    public constructor(props: TMessageProps) {
         super('div', props);
     }
 

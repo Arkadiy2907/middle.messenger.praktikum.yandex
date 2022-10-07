@@ -1,9 +1,9 @@
-import tpl from './tpl.hbs';
 import Block from '../../core/Block';
-import ButtonBlue from '../button';
 import { router } from '../../index';
+import ButtonBlue from '../button';
+import tpl from './tpl.hbs';
 
-interface IReloadAvatarProps {
+type TReloadAvatarProps = {
     src?: string;
     events?: {
         click?: (event: Event) => void;
@@ -11,8 +11,8 @@ interface IReloadAvatarProps {
     };
 }
 
-export default class ReloadAvatar extends Block {
-    constructor(props: IReloadAvatarProps) {
+export default class ReloadAvatar extends Block<TReloadAvatarProps> {
+    public constructor(props: TReloadAvatarProps) {
         const buttonBlue = new ButtonBlue({
             value: 'Сохранить',
             type: 'submit',
