@@ -38,4 +38,5 @@ sprint_4
 
 Добавлены тесты на Mocha/chai,
 Parcel заменен на Webpack,
-Использовал Docker для контейнеризации и выгрузки на Heroku.
+Использовал Docker для контейнеризации и выгрузки на Heroku:
+https://yandex-praktikum-messenger.herokuapp.com/
