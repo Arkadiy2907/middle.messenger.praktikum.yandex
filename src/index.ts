@@ -1,6 +1,6 @@
 import Router from './core/router/Router';
 import Login from './pages/login';
-import warning from './pages/warning';
+import Warning from './pages/warning';
 import FiveHundred from './pages/fiveHundred';
 import Registration from './pages/registration';
 import ChooseChat from './pages/chooseChat';
@@ -14,7 +14,7 @@ export const router = new Router('#root');
 
 const { pathname } = window.location;
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     router
         .use('/', Login)
         .use('/login', Login)
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .use('/loadAvatar', LoadAvatar)
 
         .use('/fiveHundred', FiveHundred)
-        .use('/warning', warning)
+        .use('/warning', Warning)
         .use('*', FiveHundred);
 
     let isStartRoute = true;

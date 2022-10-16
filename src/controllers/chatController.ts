@@ -46,8 +46,10 @@ class ChatController {
     public async addUser(data: TChatUser) {
         try {
             await chatApi.addUser(data);
+            console.log('add user');
             return { success: true };
         } catch (e: any) {
+            alert(e.reason);
             return e.reason;
         }
     }
@@ -55,8 +57,10 @@ class ChatController {
     public async deleteUsers(data: TChatUser) {
         try {
             await chatApi.deleteUsers(data);
+            console.log('delete users');
             return { success: true };
         } catch (e: any) {
+            alert(e.reason);
             return e.reason;
         }
     }
