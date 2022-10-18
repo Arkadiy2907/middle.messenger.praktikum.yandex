@@ -41,6 +41,82 @@ export const removeErrorMessage = (target: any) => {
     error.textContent = '';
 };
 
+export const addErrorMessage = (input: any, message: string) => {
+    const error = input.parentNode.children[1];
+    error.style.visibility = 'visible';
+    error.textContent = message;
+};
+
+export const inputIsNotValid = ({
+    input, target, value, message,
+}: InputIsNotValid) => {
+    !input.isValid(value) && addErrorMessage(target, message);
+    return input.isValid(value);
+};
+
+export const validMessage = {
+    login: {
+        message: errorMessage.login,
+        regExp: regExp.login,
+        isValid(value: string) {
+            return this.regExp.test(value);
+        },
+    },
+    firstName: {
+        message: errorMessage.name,
+        regExp: regExp.name,
+        isValid(value: string) {
+            return this.regExp.test(value);
+        },
+    },
+    secondName: {
+        message: errorMessage.name,
+        regExp: regExp.name,
+        isValid(value: string) {
+            return this.regExp.test(value);
+        },
+    },
+    email: {
+        message: errorMessage.email,
+        regExp: regExp.email,
+        isValid(value: string) {
+            return this.regExp.test(value);
+        },
+    },
+    password: {
+        message: errorMessage.password,
+        regExp: regExp.password,
+        isValid(value: string) {
+            return this.regExp.test(value);
+        },
+    },
+    oldPassword: {
+        message: errorMessage.password,
+        regExp: regExp.password,
+        isValid(value: string) {
+            return this.regExp.test(value);
+        },
+    },
+    passwordAgain: {
+        message: errorMessage.password,
+        regExp: regExp.password,
+        isValid(value: string) {
+            return this.regExp.test(value);
+        },
+    },
+    phone: {
+        message: errorMessage.phone,
+        regExp: regExp.phone,
+        isValid(value: string) {
+            return this.regExp.test(value);
+        },
+    },
+};
+
+export const onFocus = ({ target }: ITarget) => {
+    removeErrorMessage(target);
+};
+
 export const onBlur = ({ target, value, name }: IBlurProps) => {
     const {
         login, firstName, secondName, email, oldPassword, password, passwordAgain, phone,
@@ -122,80 +198,4 @@ export const onBlur = ({ target, value, name }: IBlurProps) => {
     default:
         console.log('Upss!');
     }
-};
-
-export const inputIsNotValid = ({
-    input, target, value, message,
-}: InputIsNotValid) => {
-    !input.isValid(value) && addErrorMessage(target, message);
-    return input.isValid(value);
-};
-
-export const addErrorMessage = (input: any, message: string) => {
-    const error = input.parentNode.children[1];
-    error.style.visibility = 'visible';
-    error.textContent = message;
-};
-
-export const validMessage = {
-    login: {
-        message: errorMessage.login,
-        regExp: regExp.login,
-        isValid(value: string) {
-            return this.regExp.test(value);
-        },
-    },
-    firstName: {
-        message: errorMessage.name,
-        regExp: regExp.name,
-        isValid(value: string) {
-            return this.regExp.test(value);
-        },
-    },
-    secondName: {
-        message: errorMessage.name,
-        regExp: regExp.name,
-        isValid(value: string) {
-            return this.regExp.test(value);
-        },
-    },
-    email: {
-        message: errorMessage.email,
-        regExp: regExp.email,
-        isValid(value: string) {
-            return this.regExp.test(value);
-        },
-    },
-    password: {
-        message: errorMessage.password,
-        regExp: regExp.password,
-        isValid(value: string) {
-            return this.regExp.test(value);
-        },
-    },
-    oldPassword: {
-        message: errorMessage.password,
-        regExp: regExp.password,
-        isValid(value: string) {
-            return this.regExp.test(value);
-        },
-    },
-    passwordAgain: {
-        message: errorMessage.password,
-        regExp: regExp.password,
-        isValid(value: string) {
-            return this.regExp.test(value);
-        },
-    },
-    phone: {
-        message: errorMessage.phone,
-        regExp: regExp.phone,
-        isValid(value: string) {
-            return this.regExp.test(value);
-        },
-    },
-};
-
-export const onFocus = ({ target }: ITarget) => {
-    removeErrorMessage(target);
 };

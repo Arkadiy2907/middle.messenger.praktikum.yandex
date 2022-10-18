@@ -1,8 +1,8 @@
 import { describe } from 'mocha';
 import { expect } from 'chai';
-import Block from './Block'
+import Block from './Block';
 
-describe('Test Block', () => {
+describe('Test Block have correct props', () => {
     const block = new Block('div', {
         className: 'component',
     });
@@ -10,8 +10,14 @@ describe('Test Block', () => {
     it('block must have correct props', () => {
         expect(block.props.className).to.equal('component');
     });
+});
 
-    it('block have id', () => {
+describe('Test Block have id', () => {
+    const block = new Block('div', {
+        className: 'component',
+    });
+
+    it('block must have id', () => {
         expect(block.id).to.be.a('string');
     });
 });

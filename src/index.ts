@@ -14,7 +14,7 @@ export const router = new Router('#root');
 
 const { pathname } = window.location;
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
     router
         .use('/', Login)
         .use('/login', Login)

@@ -44,8 +44,8 @@ export default class Block<Props extends Record<string, any> = any> {
         this.eventBus().emit('flow:render');
     }
 
-    private _componentDidMount(oldProps: TProps) {
-        this.componentDidMount(oldProps);
+    private _componentDidMount() {
+        this.componentDidMount();
         Object.values(this.children).forEach((child) => {
             if (Array.isArray(child)) {
                 child.forEach((item) => {
@@ -57,21 +57,21 @@ export default class Block<Props extends Record<string, any> = any> {
         });
     }
 
-    componentDidMount(_oldProps: TProps) { }
+    componentDidMount() { }
 
     dispatchComponentDidMount() {
         this.eventBus().emit('flow:component-did-mount');
     }
 
-    private _componentDidUpdate(oldProps: TProps, newProps: TProps) {
-        const response = this.componentDidUpdate(oldProps, newProps);
+    private _componentDidUpdate() {
+        const response = this.componentDidUpdate();
         if (!response) {
             return;
         }
         this._render();
     }
 
-    componentDidUpdate(_oldProps: TProps, _newProps: TProps) {
+    componentDidUpdate() {
         return true;
     }
 
@@ -170,7 +170,7 @@ export default class Block<Props extends Record<string, any> = any> {
         });
     }
 
-    private _getChildren(propsAndChildren: {}) {
+    private _getChildren(propsAndChildren: Record<string, unknown>) {
         const children: TProps = {};
         const props: TProps = {};
 

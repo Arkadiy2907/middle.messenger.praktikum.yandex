@@ -1,17 +1,34 @@
+import sinon, { SinonFakeXMLHttpRequest, SinonFakeXMLHttpRequestStatic } from 'sinon';
 import { expect } from 'chai';
 import { Client } from './HTTP';
 
-describe('Test HTTP', () => {
-    const http: Client = new Client('/auth');
+describe('Client', () => {
+    let xhr: SinonFakeXMLHttpRequestStatic;
+    let instance: Client;
+    const requests: SinonFakeXMLHttpRequest[] = [];
 
-    it('Test get (get user on id)', () => {
-        http.get('https://ya-praktikum.tech/api/v2/user/92369').then((resp: any) => expect(resp).to.have.property('id').and.equal(92369));
+    beforeEach(() => {
+        xhr = sinon.useFakeXMLHttpRequest();
+
+        // @ts-ignore
+        global.XMLHttpRequest = xhr;
+
+        xhr.onCreate = ((request: SinonFakeXMLHttpRequest) => {
+            requests.push(request);
+        });
+
+        instance = new Client('/auth');
     });
 
-    it('Test post (find user on login)', () => {
-        http.post('https://ya-praktikum.tech/api/v2/user/search', {
-            headers: { 'content-type': 'application/json' },
-            data: { login: 'Zxcvbn' },
-        }).then((resp) => expect(resp).to.have.property('id').and.equal(92369));
+    afterEach(() => {
+        requests.length = 0;
+    });
+
+    it('.get() should send GET request', () => {
+        instance.get('/user');
+
+        const [request] = requests;
+
+        expect(request.method).to.eq('GET');
     });
 });
