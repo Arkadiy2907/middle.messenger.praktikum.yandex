@@ -32,7 +32,7 @@ class ChatApi {
         return _http.delete('/users', data);
     }
 
-    getChatUsers(chatId: number = 0): Promise<unknown> {
+    getChatUsers(chatId = 0): Promise<unknown> {
         return _http.post(`/token/${chatId}`);
     }
 }

@@ -48,6 +48,7 @@ class ChatController {
             await chatApi.addUser(data);
             return { success: true };
         } catch (e: any) {
+            alert(e.reason);
             return e.reason;
         }
     }
@@ -57,6 +58,7 @@ class ChatController {
             await chatApi.deleteUsers(data);
             return { success: true };
         } catch (e: any) {
+            alert(e.reason);
             return e.reason;
         }
     }

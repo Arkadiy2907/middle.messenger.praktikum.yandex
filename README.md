@@ -32,3 +32,11 @@ sprint_3
 
 Добавлен роутинг
 Подключены HTTP API и WebSocket
+======================================================================================
+
+sprint_4
+
+Добавлены тесты на Mocha/chai,
+Parcel заменен на Webpack,
+Использовал Docker для контейнеризации и выгрузки на Heroku:
+https://yandex-praktikum-messenger.herokuapp.com/

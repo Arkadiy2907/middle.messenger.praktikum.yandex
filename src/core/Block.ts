@@ -1,8 +1,5 @@
+import { nanoid } from 'nanoid/non-secure';
 import EventBus from './EventBus';
-
-const { v4: uuidv4 } = require('/node_modules/uuid/dist/index');
-
-type Events = 'init' | 'flow:component-did-mount' | 'flow:component-did-update' | 'flow:render';
 
 type TProps = Record<string, any>;
 
@@ -24,7 +21,7 @@ export default class Block<Props extends Record<string, any> = any> {
         this.children = children;
         const eventBus = new EventBus();
         this.eventBus = () => eventBus;
-        this.id = uuidv4();
+        this.id = nanoid(6);
         this.props = this._makePropsProxy({ ...props, id: this.id });
         this.tagName = tagName;
         this._registerEvents(eventBus);
@@ -47,8 +44,8 @@ export default class Block<Props extends Record<string, any> = any> {
         this.eventBus().emit('flow:render');
     }
 
-    private _componentDidMount(oldProps: TProps) {
-        this.componentDidMount(oldProps);
+    private _componentDidMount() {
+        this.componentDidMount();
         Object.values(this.children).forEach((child) => {
             if (Array.isArray(child)) {
                 child.forEach((item) => {
@@ -60,21 +57,21 @@ export default class Block<Props extends Record<string, any> = any> {
         });
     }
 
-    componentDidMount(_oldProps: TProps) { }
+    componentDidMount() { }
 
     dispatchComponentDidMount() {
         this.eventBus().emit('flow:component-did-mount');
     }
 
-    private _componentDidUpdate(oldProps: TProps, newProps: TProps) {
-        const response = this.componentDidUpdate(oldProps, newProps);
+    private _componentDidUpdate() {
+        const response = this.componentDidUpdate();
         if (!response) {
             return;
         }
         this._render();
     }
 
-    componentDidUpdate(_oldProps: TProps, _newProps: TProps) {
+    componentDidUpdate() {
         return true;
     }
 
@@ -83,7 +80,7 @@ export default class Block<Props extends Record<string, any> = any> {
             return;
         }
 
-        const { children, props } = this._getChildren(nextProps);
+        const { children } = this._getChildren(nextProps);
         Object.assign(this.children, children);
         Object.assign(this.props, nextProps);
     };
@@ -173,7 +170,7 @@ export default class Block<Props extends Record<string, any> = any> {
         });
     }
 
-    private _getChildren(propsAndChildren: {}) {
+    private _getChildren(propsAndChildren: Record<string, unknown>) {
         const children: TProps = {};
         const props: TProps = {};
 

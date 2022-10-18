@@ -14,7 +14,7 @@ export class Client {
         this.url = `https://ya-praktikum.tech/api/v2${path}`;
     }
 
-    get = (path = '/', data?: unknown, headers?: Record<string, string>) => this.request(this.url + path, { data, headers, method: 'GET' });
+    get = (path:string, data?: unknown, headers?: Record<string, string>) => this.request(this.url + path, { data, headers, method: 'GET' });
 
     post = (path: string, data?: unknown, headers?: Record<string, string>) => this.request(this.url + path, { method: 'POST', data, headers });
 
